@@ -1,0 +1,738 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kitty Chawla | Designer, Brand Strategist, Writer</title>
+<meta name="description" content="Kitty Chawla is a graphic designer, brand strategist and writer. Loud brands, quiet words.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FF5436'/%3E%3Ctext x='32' y='43' font-size='30' text-anchor='middle' fill='%23FFF3DA' font-family='serif'%3EKC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Lora:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- doodle sprite: decorative shapes reused by the drifting background layers -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="d-spark" viewBox="0 0 40 40"><path d="M20 2c1.5 9 4 13 18 18-14 5-16.500 9-18 18-1.500-9-4-13-18-18C16 15 18.500 11 20 2z"/></symbol>
+    <symbol id="d-ring" viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="5"/></symbol>
+    <symbol id="d-squig" viewBox="0 0 80 24"><path d="M3 12c8-14 14 14 22 0s14 14 22 0 14 14 22 0 6 4 8 0" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="d-flower" viewBox="0 0 48 48"><g><circle cx="24" cy="10" r="9"/><circle cx="38" cy="24" r="9"/><circle cx="24" cy="38" r="9"/><circle cx="10" cy="24" r="9"/></g><circle cx="24" cy="24" r="6" fill="var(--cream)"/></symbol>
+    <symbol id="d-leaf" viewBox="0 0 40 40"><path d="M4 36C4 16 16 4 36 4c0 20-12 32-32 32z"/><path d="M6 34L26 14" stroke="var(--cream)" stroke-width="2" fill="none"/></symbol>
+    <symbol id="d-dots" viewBox="0 0 48 48"><circle cx="8" cy="8" r="4"/><circle cx="24" cy="8" r="4"/><circle cx="40" cy="8" r="4"/><circle cx="8" cy="24" r="4"/><circle cx="24" cy="24" r="4"/><circle cx="40" cy="24" r="4"/><circle cx="8" cy="40" r="4"/><circle cx="24" cy="40" r="4"/><circle cx="40" cy="40" r="4"/></symbol>
+    <symbol id="d-cross" viewBox="0 0 40 40"><path d="M8 8l24 24M32 8L8 32" stroke="currentColor" stroke-width="5" stroke-linecap="round" fill="none"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#work">Skip to work</a>
+
+<header class="nav" id="nav">
+  <div class="nav__bar">
+    <a class="nav__mark" href="#top" aria-label="Kitty Chawla, back to top">Kitty Chawla</a>
+    <nav class="nav__links" id="navlinks" aria-label="Primary">
+      <span class="nav__blob" id="navblob" aria-hidden="true"></span>
+      <a href="#work" data-sec="work">Work</a>
+      <a href="#corner" data-sec="corner">Strategy</a>
+      <a href="#credentials" data-sec="credentials">Credentials</a>
+      <a href="#writing" data-sec="writing">Writing</a>
+      <a href="#hello" data-sec="hello" class="nav__cta">Say hello</a>
+    </nav>
+  </div>
+  <div class="nav__progress" id="navprogress" aria-hidden="true"></div>
+</header>
+
+<div class="cursor" id="cursor" aria-hidden="true">
+  <div class="cursor__pos">
+    <svg class="cursor__star" viewBox="0 0 40 40"><path d="M20 3c1.5 8.500 4 12.500 17 17-13 4.500-15.500 8.500-17 17-1.500-8.500-4-12.500-17-17C16 15.500 18.500 11.500 20 3z" stroke-linejoin="round"/></svg>
+    <span class="cursor__tag"></span>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- HERO: pinned, stickers scatter as you scroll -->
+<section class="hero" id="hero" data-nav-bg="#FFF3DA" data-nav-ink="#1A1410" aria-labelledby="hero-title">
+  <div class="hero__stick">
+    <div class="doodles" data-doodles="hero" aria-hidden="true"></div>
+
+    <div class="hero__layer hero__layer--back" aria-hidden="true">
+      <figure class="stk" data-depth="0.10" data-ox="-1" data-oy="-0.3" style="--x:3vw;--y:24vh;--r:-5deg;--w:clamp(110px,16vw,240px)"><img src="assets/img/d-yoga.webp" alt=""><figcaption>Indian Essence</figcaption></figure>
+      <figure class="stk" data-depth="0.16" data-ox="1" data-oy="-0.4" style="--x:78vw;--y:13vh;--r:4deg;--w:clamp(110px,16vw,240px)"><img src="assets/img/d-adsecure.webp" alt=""><figcaption>Secure Funds</figcaption></figure>
+    </div>
+
+    <div class="hero__copy">
+      <p class="hero__kicker label">Graphic designer / Brand strategist / Writer</p>
+      <h1 id="hero-title" class="hero__title">
+        <span class="hero__first" aria-hidden="true"><span>K</span><span>i</span><span>t</span><span>t</span><span>y</span></span>
+        <span class="hero__last" aria-hidden="true"><span>C</span><span>h</span><span>a</span><span>w</span><span>l</span><span>a</span></span>
+        <span class="sr-only">Kitty Chawla</span>
+      </h1>
+      <p class="hero__lede">I make brands that talk back, campaigns people forward to their mums, and words that sit quietly in the spaces between.</p>
+    </div>
+
+    <div class="hero__layer hero__layer--front" aria-hidden="true">
+      <figure class="stk" data-depth="0.30" data-ox="1" data-oy="0.9" style="--x:80vw;--y:67vh;--r:-4deg;--w:clamp(120px,17vw,250px)"><img src="assets/img/d-cyber.webp" alt=""><figcaption>Cyber Cell</figcaption></figure>
+      <figure class="stk" data-depth="0.38" data-ox="-1" data-oy="0.9" style="--x:3vw;--y:65vh;--r:4deg;--w:clamp(110px,15vw,230px)"><img src="assets/img/d-homekrafted2.webp" alt=""><figcaption>HomeKrafted</figcaption></figure>
+      <figure class="stk" data-depth="0.24" data-ox="1.2" data-oy="0" style="--x:88vw;--y:37vh;--r:7deg;--w:clamp(80px,9vw,140px)"><img src="assets/img/d-ics-insta.webp" alt=""><figcaption>Indian Cart Story</figcaption></figure>
+      <svg class="badge" data-depth="0.20" data-ox="-1" data-oy="-1" viewBox="0 0 120 120" style="--x:2vw;--y:4vh">
+        <path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" fill="none"/>
+        <circle cx="60" cy="60" r="58" fill="#FF5436"/>
+        <text font-family="Poppins, sans-serif" font-weight="600" font-size="10.500" fill="#FFF3DA" letter-spacing="2.4"><textPath href="#circ">DESIGN • STRATEGY • WORDS •</textPath></text>
+        <path d="M60 44 l5 12 13 1 -10 8 3 13 -11 -7 -11 7 3 -13 -10 -8 13 -1z" fill="#FFC21F"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" id="ticker" aria-hidden="true">
+  <div class="ticker__track" id="tickertrack">
+    <span>Brand identity</span><i></i><span>Social campaigns</span><i></i><span>Brand strategy</span><i></i><span>Print and packaging</span><i></i><span>Copywriting</span><i></i><span>Poetry</span><i></i>
+    <span>Brand identity</span><i></i><span>Social campaigns</span><i></i><span>Brand strategy</span><i></i><span>Print and packaging</span><i></i><span>Copywriting</span><i></i><span>Poetry</span><i></i>
+  </div>
+</div>
+
+<!-- WORK INTRO -->
+<section class="intro" id="work" data-nav-bg="#FFF3DA" data-nav-ink="#1A1410">
+  <div class="doodles" data-doodles="intro" aria-hidden="true"></div>
+  <h2 class="intro__text" data-split>Five brands, five very different rooms. Come in, look around.</h2>
+</section>
+
+<!-- 1. HOMEKRAFTED -->
+<section class="pan hk scallop" data-pan data-nav-bg="#FFC21F" data-nav-ink="#1A1410" aria-labelledby="hk-title" style="--bg:var(--marigold)">
+  <div class="pan__stick">
+    <div class="doodles" data-doodles="hk" aria-hidden="true"></div>
+    <div class="pan__head">
+      <p class="label">Food / Social campaigns</p>
+      <h2 id="hk-title" class="display">HomeKrafted</h2>
+      <p class="pan__sub">Ghar ka khaana, roz ka bharosa. A kitchen brand that talks in Hindi, Punjabi and a lot of film references.</p>
+    </div>
+    <div class="pan__track">
+      <figure class="card sq" style="--r:-1.5deg"><img loading="lazy" src="assets/img/d-homekrafted2.webp" alt="HomeKrafted daily rice bowls poster with veg and non-veg bowls and chef mascots"></figure>
+      <figure class="card ph" style="--r:1.5deg"><img loading="lazy" src="assets/img/pub-5334.webp" alt="HomeKrafted Instagram post: Khaana khaane ka koi samay nahi hota"></figure>
+      <figure class="card ph" style="--r:-1deg"><img loading="lazy" src="assets/img/pub-5606.webp" alt="HomeKrafted post in Punjabi: Ghar de khaane di yaad ni aayi"></figure>
+      <figure class="card sq" style="--r:2deg"><img loading="lazy" src="assets/img/d-3860.webp" alt="HomeKrafted announcement: A big update, opening soon"></figure>
+      <figure class="card ph" style="--r:-2deg"><img loading="lazy" src="assets/img/pub-5609.webp" alt="HomeKrafted post using a classic Bollywood scene for a food pun"></figure>
+      <figure class="card ph" style="--r:1.5deg"><img loading="lazy" src="assets/img/pub-5335.webp" alt="HomeKrafted Butter Me Up Bowls post"></figure>
+      <figure class="card ph" style="--r:-1.5deg"><img loading="lazy" src="assets/img/pub-5607.webp" alt="HomeKrafted post: Knock knock, welcome"></figure>
+      <figure class="card ph" style="--r:1deg"><img loading="lazy" src="assets/img/pub-5902.webp" alt="HomeKrafted Mother's Day post: She may not always say I love you, but she fills your plate"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 2. CENT SPICES -->
+<section class="cent scallop" data-fan data-nav-bg="#34190D" data-nav-ink="#FFF3DA" aria-labelledby="cent-title" style="--bg:var(--brown)">
+  <div class="doodles" data-doodles="cent" aria-hidden="true"></div>
+  <div class="cent__inner">
+    <div class="cent__copy">
+      <p class="label label--light">Spices / Instagram stories</p>
+      <h2 id="cent-title" class="display display--light">Cent <span>Spices</span></h2>
+      <p>What happens when mustard seeds start crackling? A question on every story, a taste in every answer. Curiosity does the selling.</p>
+    </div>
+    <div class="cent__fan">
+      <figure class="ph fanned" data-fanned="-1"><img loading="lazy" src="assets/img/pub-4572.webp" alt="Cent Spices story: What happens when you add cumin to hot oil?"></figure>
+      <figure class="ph fanned" data-fanned="0"><img loading="lazy" src="assets/img/pub-4610.webp" alt="Cent Spices story: What happens when mustard seeds start crackling?"></figure>
+      <figure class="ph fanned" data-fanned="1"><img loading="lazy" src="assets/img/pub-4631.webp" alt="Cent Spices story: What happens when you chew fennel after a meal?"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 3. INDIAN ESSENCE -->
+<section class="essence scallop" data-nav-bg="#EADBC2" data-nav-ink="#1A1410" aria-labelledby="ie-title" style="--bg:var(--sand)">
+  <div class="doodles" data-doodles="essence" aria-hidden="true"></div>
+  <div class="essence__inner">
+    <p class="label">Wellness / Yoga</p>
+    <h2 id="ie-title" class="essence__line"><span class="rv">Slow down.</span> <span class="rv" style="--d:.15s">The brand breathes too.</span></h2>
+    <div class="essence__row">
+      <figure class="ph rv" style="--d:.1s"><img loading="lazy" src="assets/img/pub-4341.webp" alt="Indian Essence Holi story with a woman meditating in colour clouds"></figure>
+      <figure class="tall rv" style="--d:.25s"><img loading="lazy" src="assets/img/d-yoga.webp" alt="Indian Essence daily yoga classes poster"></figure>
+      <figure class="ph rv" style="--d:.4s"><img loading="lazy" src="assets/img/pub-5337.webp" alt="Indian Essence post: Hormonal balance through yoga"></figure>
+    </div>
+    <p class="essence__note rv">Indian Essence. Earth tones, generous space, a typeface with a pulse.</p>
+  </div>
+</section>
+
+<!-- 4. PUBLIC SAFETY -->
+<section class="safe scallop" data-nav-bg="#A9D6FF" data-nav-ink="#1A1410" aria-labelledby="safe-title" style="--bg:var(--sky)">
+  <div class="doodles" data-doodles="safe" aria-hidden="true"></div>
+  <div class="safe__head">
+    <p class="label">Public awareness / Cyber safety</p>
+    <h2 id="safe-title" class="display">Design that keeps you <span>safe</span></h2>
+    <p>Serious subjects, easy to read. Posts made for the Chandigarh Cyber Cell audience, built so a worried parent understands them in three seconds. <b class="hint">On a computer, drag the cards around.</b></p>
+  </div>
+  <div class="safe__pile" data-pile>
+    <figure class="drag" data-cursor="Drag" style="--x:2%;--y:6%;--r:-4deg;--w:min(46%,420px)"><img loading="lazy" src="assets/img/d-2023.webp" alt="How to prevent sextortion: eight safety tips with icons"></figure>
+    <figure class="drag" data-cursor="Drag" style="--x:40%;--y:0%;--r:3deg;--w:min(44%,400px)"><img loading="lazy" src="assets/img/d-cyber.webp" alt="Cyber safety poster: Don't judge a book by its cover, it can be a honey trap. Helpline 1930"></figure>
+    <figure class="drag ph" data-cursor="Drag" style="--x:68%;--y:14%;--r:-2deg;--w:min(24%,230px)"><img loading="lazy" src="assets/img/pub-5338.webp" alt="Honey trap awareness post as seen on Instagram"></figure>
+  </div>
+</section>
+
+<!-- 5. RANGE -->
+<section class="range scallop" data-nav-bg="#1A1410" data-nav-ink="#FFF3DA" aria-labelledby="range-title" style="--bg:var(--ink)">
+  <div class="doodles" data-doodles="range" aria-hidden="true"></div>
+  <h2 id="range-title" class="range__title">Also fluent in <span>suits.</span></h2>
+  <div class="range__grid">
+    <figure class="wipe" style="--d:0s"><img loading="lazy" src="assets/img/d-adsecure.webp" alt="Secure Funds services poster: unlock financial opportunities"><figcaption class="label">Secure Funds / Finance</figcaption></figure>
+    <figure class="wipe" style="--d:.15s"><img loading="lazy" src="assets/img/d-paramedify.webp" alt="Paramedify poster: job opportunity for nurses in Germany"><figcaption class="label">Paramedify / Healthcare careers</figcaption></figure>
+    <figure class="wipe" style="--d:.3s"><img loading="lazy" src="assets/img/d-ics-insta.webp" alt="Indian Cart Story outreach schedule poster"><figcaption class="label">Indian Cart Story / Food outreach</figcaption></figure>
+  </div>
+  <p class="range__more">More in the <a href="https://drive.google.com/drive/folders/1gX_kSRlz-UfGL7PMfCWfHnV23PwLWhDl" target="_blank" rel="noopener">full portfolio folder</a>: carousels, decks, menus, reports and print ads.</p>
+</section>
+
+<!-- STRATEGY CORNER -->
+<section class="corner scallop" id="corner" data-nav-bg="#2E5E3E" data-nav-ink="#FFF3DA" aria-labelledby="corner-title" style="--bg:var(--leaf)">
+  <div class="doodles" data-doodles="corner" aria-hidden="true"></div>
+  <div class="corner__inner">
+    <header class="corner__head">
+      <p class="label label--light">The strategy corner</p>
+      <h2 id="corner-title" class="display display--light">Brands &amp; the ideas I pinned up for them</h2>
+      <p class="corner__dek">Pick a brand. These are the real ideas, lines and plans from my working files.</p>
+    </header>
+
+    <div class="corner__board">
+      <div class="tabs" role="tablist" aria-label="Brands" aria-orientation="vertical" id="tabs">
+        <button role="tab" id="tab-cent" aria-controls="p-cent" aria-selected="true" data-tone="#FFC21F">Cent Spices <small>and Shubh Labh</small></button>
+        <button role="tab" id="tab-ie" aria-controls="p-ie" aria-selected="false" data-tone="#FFB3C7">Indian Essence</button>
+        <button role="tab" id="tab-hk" aria-controls="p-hk" aria-selected="false" data-tone="#FFC21F">HomeKrafted</button>
+        <button role="tab" id="tab-re" aria-controls="p-re" aria-selected="false" data-tone="#A9D6FF">Real estate <small>Marbella, Vibe, Atlantis</small></button>
+        <button role="tab" id="tab-tmt" aria-controls="p-tmt" aria-selected="false" data-tone="#A9D6FF">TMT Plus</button>
+        <button role="tab" id="tab-meera" aria-controls="p-meera" aria-selected="false" data-tone="#FFC21F">Meera &amp; Co.</button>
+        <button role="tab" id="tab-oils" aria-controls="p-oils" aria-selected="false" data-tone="#FFB3C7">Bhushan Oils</button>
+        <button role="tab" id="tab-burn" aria-controls="p-burn" aria-selected="false" data-tone="#FF5436">Burn Gym</button>
+        <button role="tab" id="tab-recover" aria-controls="p-recover" aria-selected="false" data-tone="#EADBC2">Recover</button>
+      </div>
+
+      <div class="panels">
+        <div class="panel" role="tabpanel" id="p-cent" aria-labelledby="tab-cent">
+          <h3 class="panel__brand">Cent Spices</h3>
+          <p class="panel__plan">Turn every spice into a question people want answered. Four story formats, each built to be answered in one swipe.</p>
+          <ul class="notes">
+            <li class="note" style="--n:#FFC21F;--r:-1.5deg"><b>What happens when&hellip;</b>Cumin hits hot oil. Fennel after a meal. Mustard seeds crackling. The curiosity hook behind the live stories.</li>
+            <li class="note" style="--n:#FFB3C7;--r:1.2deg"><b>Myth vs Fact</b>Ten of them. &ldquo;Black pepper only adds heat.&rdquo; Fact: it also helps nutrient absorption.</li>
+            <li class="note" style="--n:#A9D6FF;--r:-1deg"><b>Did you know?</b>Cloves are dried flower buds. Cinnamon is inner bark. Fenugreek turns mildly sweet when roasted.</li>
+            <li class="note" style="--n:#FFF3DA;--r:1.5deg"><b>Historically&hellip;</b>Pepper was once called black gold. Wars were fought over cloves. Bay leaves crowned Greek champions.</li>
+            <li class="note" style="--n:#FFC21F;--r:-1deg"><b>Smaller series</b>This spice secret. Tiny but mighty. Kitchen science. Flavour or function? The 10-second magic.</li>
+          </ul>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-ie" aria-labelledby="tab-ie" hidden>
+          <h3 class="panel__brand">Indian Essence</h3>
+          <p class="panel__plan">Wellness content that teaches first, sells second, and ends every post with a one-word DM prompt.</p>
+          <ul class="notes">
+            <li class="note" style="--n:#FFB3C7;--r:-1.5deg"><b>Hormonal Balance Through Yoga</b>A five-post carousel. One asana per slide: Baddha Konasana, Setu Bandhasana, Viparita Karani, Balasana, Supta Baddha Konasana.</li>
+            <li class="note" style="--n:#FFC21F;--r:1deg"><b>DM &ldquo;BALANCE&rdquo;</b>Every post closes with a keyword to message. A simple way to turn a reader into a conversation.</li>
+            <li class="note" style="--n:#A9D6FF;--r:-1deg"><b>Did you know?</b>Yoga comes from <i>yuj</i>, to unite. Surya Namaskar is a gratitude ritual, not just a warm-up.</li>
+            <li class="note" style="--n:#FFF3DA;--r:1.4deg"><b>Myth vs Fact</b>&ldquo;Yoga is only for flexible people.&rdquo; Therapeutic yoga is for healing, not gymnastics.</li>
+            <li class="note" style="--n:#EADBC2;--r:-1.2deg"><b>Holi idea</b>A woman in yoga with chakra colours circling her, each colour's meaning in one line.</li>
+          </ul>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-hk" aria-labelledby="tab-hk" hidden>
+          <h3 class="panel__brand">HomeKrafted</h3>
+          <p class="panel__plan">A homemade, youth-focused food brand for Tier-2 cities like Chandigarh, Mohali and Panchkula. I wrote the business model for three formats.</p>
+          <ul class="notes">
+            <li class="note" style="--n:#FFC21F;--r:-1.2deg"><b>Food cart</b>One chef, one helper. Fastest breakeven, ideal for testing a market. Minimum monthly profit: ₹30,000 to ₹60,000.</li>
+            <li class="note" style="--n:#FFF3DA;--r:1.2deg"><b>Kiosk</b>Best return in college and corporate hubs. Minimum monthly profit: ₹70,000 to ₹1.5 lakh.</li>
+            <li class="note" style="--n:#FFB3C7;--r:-1deg"><b>Cafe</b>Sit-down format for brand building, with higher ticket sizes. Minimum monthly profit: ₹1.2 to ₹2.5 lakh.</li>
+            <li class="note" style="--n:#A9D6FF;--r:1.5deg"><b>Conservative by design</b>Costs, orders per day and average bill value all worked out with cautious assumptions.</li>
+          </ul>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-re" aria-labelledby="tab-re" hidden>
+          <h3 class="panel__brand">Real estate</h3>
+          <p class="panel__plan">Marbella, Vibe, Atlantis, Aanandvan, Green City Square, Maurice Square. The home as the quiet hero of every festival and every fiscal year.</p>
+          <ul class="notes">
+            <li class="note" style="--n:#FFB3C7;--r:-1.2deg"><b>Holi</b>Fifteen ideas. Big HOLI letters with a small window in each. Coloured footsteps from a grihapravesh. A pichkari with a building inside.</li>
+            <li class="note" style="--n:#FFC21F;--r:1.2deg"><b>Women's Day</b>&ldquo;A place that lets your queen bloom.&rdquo; &ldquo;Where her milestones begin.&rdquo; &ldquo;All of you belongs here.&rdquo;</li>
+            <li class="note" style="--n:#A9D6FF;--r:-1deg"><b>New fiscal year</b>&ldquo;Invest where growth is not promised but planned.&rdquo; &ldquo;Where vision meets value this fiscal year.&rdquo;</li>
+            <li class="note" style="--n:#FFF3DA;--r:1.4deg"><b>Aanandvan</b>Begin the year where peace and prosperity coexist.</li>
+            <li class="note" style="--n:#EADBC2;--r:-1.5deg"><b>Atlantis Heights</b>Let your ambition find its highest address.</li>
+          </ul>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-tmt" aria-labelledby="tab-tmt" hidden>
+          <h3 class="panel__brand">TMT Plus</h3>
+          <p class="panel__plan">Strength, flow and reliability, said through pipes and steel.</p>
+          <ul class="notes">
+            <li class="note" style="--n:#A9D6FF;--r:-1.2deg"><b>Holi</b>A colour splash bursting out of their pipes. &ldquo;Happy Holi&rdquo; coming straight from the pipe.</li>
+            <li class="note" style="--n:#FFC21F;--r:1.2deg"><b>New year</b>&ldquo;Laying pipelines for a future that lasts.&rdquo;</li>
+            <li class="note" style="--n:#FFF3DA;--r:-1deg"><b>More lines</b>&ldquo;Trust the flow that builds the future.&rdquo; &ldquo;Reinforce every project with unmatched strength.&rdquo;</li>
+          </ul>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-meera" aria-labelledby="tab-meera" hidden>
+          <h3 class="panel__brand">Meera &amp; Co.</h3>
+          <p class="panel__plan">Power backup, sold on certainty.</p>
+          <ul class="notes">
+            <li class="note" style="--n:#FFC21F;--r:-1.2deg"><b>Holi</b>A bulb with a colour burst inside. A generator throwing out a splash of colour.</li>
+            <li class="note" style="--n:#FFF3DA;--r:1.2deg"><b>New year</b>&ldquo;This year, never let ambition face a blackout.&rdquo;</li>
+            <li class="note" style="--n:#A9D6FF;--r:-1deg"><b>More lines</b>&ldquo;Switch on certainty.&rdquo; &ldquo;Generate confidence with every watt.&rdquo;</li>
+          </ul>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-oils" aria-labelledby="tab-oils" hidden>
+          <h3 class="panel__brand">Bhushan Oils</h3>
+          <p class="panel__plan">Purity you can taste, pitched around the family kitchen.</p>
+          <ul class="notes">
+            <li class="note" style="--n:#FFB3C7;--r:-1.2deg"><b>Holi</b>Oil pouring in motion, with gujiya and other festival treats around it.</li>
+            <li class="note" style="--n:#FFC21F;--r:1.2deg"><b>New year</b>&ldquo;This year, choose purity in every drop.&rdquo;</li>
+            <li class="note" style="--n:#FFF3DA;--r:-1deg"><b>More lines</b>&ldquo;Trust the oil that cares for your family.&rdquo;</li>
+          </ul>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-burn" aria-labelledby="tab-burn" hidden>
+          <h3 class="panel__brand">Burn Gym</h3>
+          <p class="panel__plan">Discipline, and the women who lift each other.</p>
+          <ul class="notes">
+            <li class="note" style="--n:#FF5436;--r:-1.2deg"><b>Women's Day film</b>A woman collapses mid-workout. Another walks over, takes her hand and pulls her back up to keep going.</li>
+            <li class="note" style="--n:#FFC21F;--r:1.2deg"><b>New year</b>&ldquo;This year, out-lift your limits.&rdquo; &ldquo;Discipline becomes your superpower.&rdquo;</li>
+          </ul>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-recover" aria-labelledby="tab-recover" hidden>
+          <h3 class="panel__brand">Recover</h3>
+          <p class="panel__plan">A hair transplant clinic where the message is confidence, not clinical.</p>
+          <ul class="notes">
+            <li class="note" style="--n:#EADBC2;--r:-1.2deg"><b>New year</b>&ldquo;This year, reclaim the look that feels like you.&rdquo;</li>
+            <li class="note" style="--n:#FFC21F;--r:1.2deg"><b>More lines</b>&ldquo;Regrow confidence strand by strand.&rdquo; &ldquo;Invest in a fuller future.&rdquo;</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS: placeholders, replace with real certificates -->
+<section class="creds" id="credentials" data-nav-bg="#FFF3DA" data-nav-ink="#1A1410" aria-labelledby="creds-title">
+  <div class="doodles" data-doodles="creds" aria-hidden="true"></div>
+  <header class="creds__head">
+    <p class="label">Credentials</p>
+    <h2 id="creds-title" class="display">Certifications &amp; training</h2>
+  </header>
+  <ul class="creds__grid">
+    <!-- PLACEHOLDER: replace each card's text and drop a certificate image into .cert__img -->
+    <li class="cert"><div class="cert__img" aria-hidden="true"><span>Certificate image</span></div><h3>Certification name</h3><p class="label">Issuing organisation / Year</p></li>
+    <li class="cert"><div class="cert__img" aria-hidden="true"><span>Certificate image</span></div><h3>Certification name</h3><p class="label">Issuing organisation / Year</p></li>
+    <li class="cert"><div class="cert__img" aria-hidden="true"><span>Certificate image</span></div><h3>Certification name</h3><p class="label">Issuing organisation / Year</p></li>
+    <li class="cert"><div class="cert__img" aria-hidden="true"><span>Certificate image</span></div><h3>Certification name</h3><p class="label">Issuing organisation / Year</p></li>
+  </ul>
+</section>
+
+<!-- WRITING: the page turns to paper -->
+<section class="writing" id="writing" data-paper data-nav-bg="#F5EEDF" data-nav-ink="#1A1410" aria-labelledby="w-title">
+  <div class="paper" aria-hidden="true"></div>
+  <div class="doodles doodles--ink" data-doodles="writing" aria-hidden="true"></div>
+  <div class="writing__inner">
+    <header class="writing__head">
+      <p class="label label--tom">The reading room</p>
+      <h2 id="w-title" class="writing__title">Words, set down slowly.</h2>
+      <p class="writing__dek">Essays, poems, a short film script, thinking out loud and a few tweets. Pick one and it opens as a page of its own.</p>
+    </header>
+
+    <div class="filters" role="group" aria-label="Filter writing">
+      <button class="chip is-on" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" data-filter="essay" aria-pressed="false">Essays</button>
+      <button class="chip" data-filter="poem" aria-pressed="false">Poems</button>
+      <button class="chip" data-filter="story" aria-pressed="false">Story &amp; script</button>
+      <button class="chip" data-filter="think" aria-pressed="false">Thinking</button>
+      <button class="chip" data-filter="copy" aria-pressed="false">Brand copy</button>
+    </div>
+
+    <ul class="shelf" id="shelf">
+
+      <li class="wcard" data-cat="essay" style="--tone:#FFC21F"><button data-open="nani" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="A little house with smoke from the chimney and a grandmother waving at the door">
+          <rect class="f-leaf" x="0" y="150" width="240" height="30"/>
+          <g class="a-twinkle"><path class="f-cream" d="M38 28l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/><path class="f-cream" d="M205 56l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/><path class="f-cream" d="M96 18l2 4 4 2-4 2-2 4-2-4-4-2 4-2z"/></g>
+          <circle class="f-cream a-pulse" cx="204" cy="30" r="12"/>
+          <rect class="f-brown" x="150" y="52" width="14" height="30"/>
+          <circle class="f-cream a-smoke" cx="157" cy="48" r="6"/><circle class="f-cream a-smoke" style="animation-delay:.9s" cx="157" cy="48" r="5"/><circle class="f-cream a-smoke" style="animation-delay:1.8s" cx="157" cy="48" r="4"/>
+          <rect class="f-tom" x="74" y="84" width="104" height="68"/>
+          <path class="f-brown" d="M62 88L126 38l64 50z"/>
+          <path class="f-brown" d="M112 152v-28a14 14 0 0 1 28 0v28z"/>
+          <rect class="f-cream a-glow" x="84" y="100" width="20" height="20"/><rect class="f-cream a-glow" style="animation-delay:.6s" x="148" y="100" width="20" height="20"/>
+          <path class="f-pink" d="M34 152c1-26 8-34 16-34s15 8 16 34z"/>
+          <circle class="f-skin" cx="50" cy="108" r="9"/><path class="f-ink" d="M41 106a9 9 0 0 1 18 0c-4-4-14-4-18 0z"/>
+          <path class="a-wave" d="M64 124l16-16" fill="none" stroke="#F0C29A" stroke-width="6" stroke-linecap="round"/>
+        </svg></span>
+        <span class="wcard__kind label">Essay / Memoir</span><span class="wcard__title">Nani ka Ghar</span><span class="wcard__dek">A sanctuary of childhood summers.</span></button></li>
+
+      <li class="wcard" data-cat="essay" style="--tone:#A9D6FF"><button data-open="stressed" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="A stressed person with a tangled scribble over their head, phone notifications popping, and a small calm island far away">
+          <path class="f-cream" d="M150 160q40-6 70 0v20h-70z"/><rect class="f-brown" x="196" y="128" width="4" height="30"/><path class="f-leaf" d="M198 130c-14-2-22 4-26 10 10-4 16-4 26-6zM198 130c12-8 24-6 30 0-10-2-18-2-30 2z"/>
+          <path class="a-scribble" d="M86 38c14-18 30 8 44-8s26 10 30-4M92 48c14-12 28 10 42-4s22 8 28-2" fill="none" stroke="#1A1410" stroke-width="4" stroke-linecap="round"/>
+          <rect class="f-tom" x="92" y="104" width="56" height="60" rx="14"/>
+          <circle class="f-skin" cx="120" cy="82" r="20"/><path class="f-ink" d="M99 80c0-20 42-20 42 0-8-8-34-8-42 0z"/>
+          <circle class="f-ink" cx="113" cy="84" r="2.500"/><circle class="f-ink" cx="127" cy="84" r="2.500"/><path d="M113 95q7-5 14 0" stroke="#1A1410" stroke-width="2.500" fill="none" stroke-linecap="round"/>
+          <path class="f-sky a-drip" d="M146 66q5 8 0 11q-5-3 0-11z"/>
+          <rect class="f-ink" x="104" y="126" width="32" height="22" rx="4"/><rect class="f-cream a-glow" x="107" y="129" width="26" height="16" rx="2"/>
+          <circle class="f-tom a-pop" cx="64" cy="70" r="9"/><circle class="f-mar a-pop" style="animation-delay:.5s" cx="180" cy="84" r="8"/><circle class="f-leaf a-pop" style="animation-delay:1s" cx="52" cy="112" r="7"/>
+        </svg></span>
+        <span class="wcard__kind label">Essay / Satire</span><span class="wcard__title">Busy Being Stressed</span><span class="wcard__dek">Peace feels like a celebrity sighting.</span></button></li>
+
+      <li class="wcard" data-cat="essay" style="--tone:#FFB3C7"><button data-open="judgemental" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="A person being studied by a swinging magnifying glass, with a mirror beside them">
+          <rect class="f-sky" x="170" y="40" width="46" height="100" rx="23"/><rect class="f-cream" x="176" y="46" width="34" height="88" rx="17" opacity=".7"/>
+          <rect class="f-leaf" x="82" y="100" width="48" height="60" rx="14"/>
+          <circle class="f-skin" cx="106" cy="78" r="19"/><path class="f-ink" d="M86 76c0-22 40-22 40 0-8-8-32-8-40 0z"/>
+          <circle class="f-ink" cx="100" cy="80" r="2.500"/><circle class="f-ink" cx="113" cy="80" r="2.500"/><path d="M100 91h13" stroke="#1A1410" stroke-width="2.500" stroke-linecap="round"/>
+          <g class="a-scan"><circle cx="106" cy="92" r="36" fill="#FFF3DA" fill-opacity=".35" stroke="#1A1410" stroke-width="6"/><path d="M132 118l30 34" stroke="#1A1410" stroke-width="10" stroke-linecap="round"/></g>
+          <circle class="f-tom a-pulse" cx="38" cy="50" r="15"/><path d="M32 50h12M38 44v12" stroke="#FFF3DA" stroke-width="3" stroke-linecap="round" transform="rotate(45 38 50)"/>
+        </svg></span>
+        <span class="wcard__kind label">Essay / Humour</span><span class="wcard__title">Busy Being Judgemental</span><span class="wcard__dek">A little less scrutiny, a little more grace.</span></button></li>
+
+      <li class="wcard" data-cat="essay" style="--tone:#FF5436"><button data-open="love" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="A stage with red curtains, a spotlight, a couple holding hands and a blinking camera">
+          <rect class="f-brown" x="0" y="150" width="240" height="30"/>
+          <path class="f-cream a-flicker" opacity=".35" d="M96 8h48l30 142H66z"/>
+          <rect class="f-ink" x="0" y="0" width="240" height="16"/>
+          <path class="f-mar" d="M0 16h58c-8 40-8 90 0 134H0z"/><path class="f-mar" d="M240 16h-58c8 40 8 90 0 134h58z"/>
+          <path class="f-ink" opacity=".25" d="M18 16c-4 50-4 90 0 134M38 16c-4 50-4 90 0 134M222 16c4 50 4 90 0 134M202 16c4 50 4 90 0 134" stroke="#1A1410" stroke-width="3" fill="none"/>
+          <g class="a-bob"><rect class="f-cream" x="94" y="100" width="22" height="50" rx="8"/><circle class="f-skin" cx="105" cy="88" r="11"/><path class="f-ink" d="M94 86a11 11 0 0 1 22 0c-6-5-16-5-22 0z"/>
+          <rect class="f-ink" x="126" y="100" width="22" height="50" rx="8"/><circle class="f-skin" cx="137" cy="88" r="11"/><path class="f-ink" d="M126 84a11 11 0 0 1 22 0v3c-6-6-16-6-22 0z"/></g>
+          <path class="f-tom a-beat" d="M121 56c-8-10-22 0-12 12l12 11 12-11c10-12-4-22-12-12z" stroke="#1A1410" stroke-width="2.500"/>
+          <rect class="f-ink" x="186" y="124" width="36" height="24" rx="4"/><circle class="f-cream" cx="204" cy="136" r="7"/><circle class="f-tom a-blink" cx="216" cy="129" r="2.500"/>
+        </svg></span>
+        <span class="wcard__kind label">Essay / Culture</span><span class="wcard__title">Love Hides Behind the Show</span><span class="wcard__dek">Romance as choreography.</span></button></li>
+
+      <li class="wcard" data-cat="essay" style="--tone:#CFE3C8"><button data-open="invisible" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="A sanitation worker sweeping a road at sunrise as leaves swirl">
+          <circle class="f-mar a-rise-sun" cx="120" cy="140" r="52"/>
+          <rect class="f-ink" opacity=".14" x="0" y="140" width="240" height="40"/>
+          <path class="f-leaf a-leaf" d="M30 120c8-10 16-6 18 4-8 2-14 2-18-4z"/><path class="f-brown a-leaf" style="animation-delay:.8s" d="M190 126c8-10 16-6 18 4-8 2-14 2-18-4z"/><path class="f-tom a-leaf" style="animation-delay:1.6s" d="M64 142c8-10 16-6 18 4-8 2-14 2-18-4z"/>
+          <g><rect class="f-tom" x="108" y="98" width="32" height="46" rx="12"/><circle class="f-skin" cx="124" cy="80" r="16"/><path class="f-ink" d="M108 78a16 16 0 0 1 32 0c-6-6-26-6-32 0z"/><circle class="f-ink" cx="119" cy="82" r="2"/><circle class="f-ink" cx="130" cy="82" r="2"/></g>
+          <g class="a-sweep"><path d="M146 66l-44 82" stroke="#34190D" stroke-width="5" stroke-linecap="round"/><path class="f-mar" d="M92 144l20 12-34 6z"/></g>
+        </svg></span>
+        <span class="wcard__kind label">Feature / Journalism</span><span class="wcard__title">Invisible Hands, Unheard Voices</span><span class="wcard__dek">Thirteen years of sweeping the same road.</span></button></li>
+
+      <li class="wcard" data-cat="essay" style="--tone:#FFD9A8"><button data-open="freedom" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="A waving tricolour flag above a crowd of small figures">
+          <rect class="f-brown" x="48" y="18" width="6" height="140"/><circle class="f-mar" cx="51" cy="16" r="6"/>
+          <g class="a-flag"><path class="f-mar2" d="M54 24c30-10 56 10 90 0v22c-34 10-60-10-90 0z"/><path class="f-cream" d="M54 46c30-10 56 10 90 0v22c-34 10-60-10-90 0z"/><path class="f-leaf" d="M54 68c30-10 56 10 90 0v22c-34 10-60-10-90 0z"/><circle cx="99" cy="57" r="7" fill="none" stroke="#2B4C9B" stroke-width="2" class="a-spin"/></g>
+          <rect class="f-ink" opacity=".16" x="0" y="150" width="240" height="30"/>
+          <g class="a-bob"><circle class="f-ink" cx="90" cy="142" r="7"/><rect class="f-ink" x="83" y="148" width="14" height="22" rx="6"/></g>
+          <g class="a-bob" style="animation-delay:.4s"><circle class="f-tom" cx="114" cy="138" r="7"/><rect class="f-tom" x="107" y="144" width="14" height="26" rx="6"/></g>
+          <g class="a-bob" style="animation-delay:.8s"><circle class="f-leaf" cx="138" cy="144" r="7"/><rect class="f-leaf" x="131" y="150" width="14" height="20" rx="6"/></g>
+          <g class="a-bob" style="animation-delay:1.2s"><circle class="f-ink" cx="162" cy="140" r="7"/><rect class="f-ink" x="155" y="146" width="14" height="24" rx="6"/></g>
+          <path class="f-tom a-pulse" d="M190 70a12 12 0 1 1 18 10c-5 3-6 5-6 10" fill="none" stroke="#FF5436" stroke-width="6" stroke-linecap="round"/><circle class="f-tom a-pulse" cx="202" cy="106" r="4"/>
+        </svg></span>
+        <span class="wcard__kind label">Essay / Op-ed</span><span class="wcard__title">77 Years of Independence: Freedom, But For Whom?</span><span class="wcard__dek">Symbols of freedom, not always its substance.</span></button></li>
+
+      <li class="wcard" data-cat="poem" style="--tone:#D9D2F0"><button data-open="unsaid" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="Two friends walking apart along a road, a paper plane flying overhead">
+          <path class="f-ink" opacity=".14" d="M0 150h240v30H0z"/><path d="M0 150L240 150" stroke="#1A1410" stroke-width="2" stroke-dasharray="10 8" opacity=".4"/>
+          <circle class="f-cream" cx="196" cy="34" r="14"/>
+          <g class="a-fly"><path class="f-cream" d="M20 60l60-22-18 40-12-14-10 10z" stroke="#1A1410" stroke-width="2" stroke-linejoin="round"/></g>
+          <g class="a-apart-l"><circle class="f-skin" cx="108" cy="98" r="10"/><path class="f-ink" d="M98 96a10 10 0 0 1 20 0c-6-5-14-5-20 0z"/><rect class="f-tom" x="98" y="108" width="20" height="40" rx="9"/></g>
+          <g class="a-apart-r"><circle class="f-skin" cx="136" cy="98" r="10"/><path class="f-ink" d="M126 96a10 10 0 0 1 20 0c-6-5-14-5-20 0z"/><rect class="f-leaf" x="126" y="108" width="20" height="40" rx="9"/></g>
+        </svg></span>
+        <span class="wcard__kind label">Poem</span><span class="wcard__title">Unsaid Goodbyes</span><span class="wcard__dek">Some friends walked beside us until the road asked for space.</span></button></li>
+
+      <li class="wcard" data-cat="poem" style="--tone:#FFE3C2"><button data-open="drones" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="Three drones hovering in front of the tricolour sky">
+          <rect fill="#FF9933" width="240" height="60"/><rect fill="#FFF3DA" y="60" width="240" height="60"/><rect fill="#2E7A45" y="120" width="240" height="60"/>
+          <circle cx="120" cy="90" r="22" fill="none" stroke="#2B4C9B" stroke-width="3" opacity=".5" class="a-spin"/>
+          <g class="a-drone"><rect class="f-ink" x="94" y="38" width="34" height="14" rx="7"/><path d="M90 40l-14-8M132 40l14-8" stroke="#1A1410" stroke-width="4"/><ellipse class="f-ink a-rotor" cx="72" cy="30" rx="12" ry="3"/><ellipse class="f-ink a-rotor" cx="150" cy="30" rx="12" ry="3"/><circle class="f-tom a-blink" cx="111" cy="45" r="3"/></g>
+          <g transform="translate(-6 58) scale(.7)"><g class="a-drone" style="animation-delay:.7s"><rect class="f-ink" x="94" y="38" width="34" height="14" rx="7"/><path d="M90 40l-14-8M132 40l14-8" stroke="#1A1410" stroke-width="4"/><ellipse class="f-ink a-rotor" cx="72" cy="30" rx="12" ry="3"/><ellipse class="f-ink a-rotor" cx="150" cy="30" rx="12" ry="3"/><circle class="f-tom a-blink" cx="111" cy="45" r="3"/></g></g>
+          <g transform="translate(110 70) scale(.6)"><g class="a-drone" style="animation-delay:1.4s"><rect class="f-ink" x="94" y="38" width="34" height="14" rx="7"/><path d="M90 40l-14-8M132 40l14-8" stroke="#1A1410" stroke-width="4"/><ellipse class="f-ink a-rotor" cx="72" cy="30" rx="12" ry="3"/><ellipse class="f-ink a-rotor" cx="150" cy="30" rx="12" ry="3"/><circle class="f-tom a-blink" cx="111" cy="45" r="3"/></g></g>
+        </svg></span>
+        <span class="wcard__kind label">Poem</span><span class="wcard__title">When missiles blaze and drones descend</span><span class="wcard__dek">A poem for those who guard the border, and for the calm we owe them.</span></button></li>
+
+      <li class="wcard" data-cat="story" style="--tone:#D8DCE0"><button data-open="voice" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="A wet street dog sitting under a rain cloud, a rose beside it">
+          <path class="f-cream" d="M50 56a22 22 0 0 1 40-10 26 26 0 0 1 50 4 18 18 0 0 1 4 36H60a18 18 0 0 1-10-30z"/>
+          <g class="a-rain"><path d="M70 100v10M96 96v10M122 104v10M148 98v10M174 104v10" stroke="#1A1410" stroke-width="3" stroke-linecap="round" opacity=".45"/></g>
+          <rect class="f-ink" opacity=".14" x="0" y="150" width="240" height="30"/>
+          <g class="a-bob"><ellipse class="f-brown" cx="110" cy="136" rx="30" ry="22"/><circle class="f-brown" cx="140" cy="112" r="18"/><path class="f-ink" d="M126 98l-8 22 14-4zM152 98l8 20-14-6z"/><circle class="f-cream" cx="146" cy="110" r="4"/><circle class="f-ink" cx="147" cy="111" r="2"/><ellipse class="f-ink" cx="154" cy="120" rx="5" ry="3.500"/><g class="a-tail"><path d="M82 138c-14 0-18-10-12-16" stroke="#34190D" stroke-width="7" fill="none" stroke-linecap="round"/></g><rect class="f-brown" x="96" y="150" width="8" height="12" rx="3"/><rect class="f-brown" x="122" y="150" width="8" height="12" rx="3"/></g>
+          <path d="M198 160v-36" stroke="#2E5E3E" stroke-width="4"/><path class="f-leaf" d="M198 148c-12-2-16 6-18 8 8 4 14 0 18-8z"/><g class="a-sway"><circle class="f-tom" cx="198" cy="116" r="12"/><circle class="f-mar2" cx="198" cy="116" r="5"/></g>
+        </svg></span>
+        <span class="wcard__kind label">Photo story</span><span class="wcard__title">If They Had a Voice</span><span class="wcard__dek">The rose, the desk, the dog and the side mirror, in the rain.</span></button></li>
+
+      <li class="wcard" data-cat="story" style="--tone:#FFC9B8"><button data-open="psa" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="A confident girl with a raised stop hand, colour splashes around her, two boys looking down">
+          <circle class="f-pink a-pulse" cx="52" cy="46" r="22"/><circle class="f-sky a-pulse" style="animation-delay:.4s" cx="198" cy="40" r="18"/><circle class="f-mar a-pulse" style="animation-delay:.8s" cx="210" cy="118" r="20"/><circle class="f-leaf a-pulse" style="animation-delay:1.2s" cx="30" cy="112" r="16"/>
+          <rect class="f-ink" opacity=".14" x="0" y="152" width="240" height="28"/>
+          <g><rect class="f-tom" x="102" y="94" width="38" height="58" rx="14"/><circle class="f-skin" cx="121" cy="72" r="19"/><path class="f-ink" d="M101 74c-4-28 44-28 40 0v38c-4 6-8 4-8-4v-26c-8-6-20-6-26 0v26c0 8-4 10-8 4z"/><circle class="f-ink" cx="114" cy="74" r="2.200"/><circle class="f-ink" cx="128" cy="74" r="2.200"/><path d="M115 84h12" stroke="#1A1410" stroke-width="2.500" stroke-linecap="round"/><g class="a-wave2"><rect class="f-skin" x="146" y="56" width="18" height="28" rx="9"/></g></g>
+          <g class="a-bow"><circle class="f-skin" cx="58" cy="120" r="9"/><rect class="f-leaf" x="50" y="130" width="16" height="30" rx="7"/></g><g class="a-bow" style="animation-delay:.5s"><circle class="f-skin" cx="82" cy="124" r="8"/><rect class="f-sky" x="75" y="133" width="14" height="28" rx="6"/></g>
+        </svg></span>
+        <span class="wcard__kind label">Script / PSA</span><span class="wcard__title">PSA on Eve Teasing During Holi</span><span class="wcard__dek">A short film where one girl answers back.</span></button></li>
+
+      <li class="wcard" data-cat="think" style="--tone:#FFC21F"><button data-open="trust" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="A shining coin that stays whole while smaller coins shrink">
+          <rect class="f-ink" opacity=".14" x="0" y="152" width="240" height="28"/>
+          <g class="a-coin"><circle class="f-mar2" cx="120" cy="88" r="52" stroke="#1A1410" stroke-width="5"/><circle cx="120" cy="88" r="38" fill="none" stroke="#1A1410" stroke-width="3" stroke-dasharray="4 5"/><path d="M104 88l12 12 22-24" stroke="#1A1410" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+          <circle class="f-mar2 a-shrink" cx="36" cy="136" r="16" stroke="#1A1410" stroke-width="3"/><circle class="f-mar2 a-shrink" style="animation-delay:.8s" cx="204" cy="140" r="13" stroke="#1A1410" stroke-width="3"/>
+          <g class="a-twinkle"><path class="f-cream" d="M184 36l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/><path class="f-cream" d="M52 44l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/></g>
+        </svg></span>
+        <span class="wcard__kind label">LinkedIn / Leadership</span><span class="wcard__title">Trust: The Only Currency That Does Not Depreciate</span><span class="wcard__dek">Markets fluctuate. Trust compounds.</span></button></li>
+
+      <li class="wcard" data-cat="think" style="--tone:#A9D6FF"><button data-open="pr" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="A building rising on a blueprint grid under a crane">
+          <path d="M0 40h240M0 80h240M0 120h240M40 0v180M80 0v180M120 0v180M160 0v180M200 0v180" stroke="#FFF3DA" stroke-width="1.500" opacity=".6"/>
+          <rect class="f-ink" opacity=".18" x="0" y="152" width="240" height="28"/>
+          <g class="a-grow"><rect class="f-tom" x="70" y="70" width="40" height="82"/><rect class="f-mar" x="114" y="40" width="44" height="112"/><rect class="f-cream" x="162" y="90" width="34" height="62"/>
+          <g class="f-ink"><rect x="78" y="80" width="8" height="8"/><rect x="94" y="80" width="8" height="8"/><rect x="78" y="98" width="8" height="8"/><rect x="94" y="98" width="8" height="8"/><rect x="122" y="52" width="8" height="8"/><rect x="140" y="52" width="8" height="8"/><rect x="122" y="70" width="8" height="8"/><rect x="140" y="70" width="8" height="8"/><rect x="122" y="88" width="8" height="8"/><rect x="140" y="88" width="8" height="8"/></g></g>
+          <path d="M40 152V22h70" stroke="#1A1410" stroke-width="5" fill="none" stroke-linejoin="round"/><g class="a-crane"><path d="M96 22v30" stroke="#1A1410" stroke-width="2.500"/><rect class="f-ink" x="86" y="52" width="20" height="12"/></g>
+        </svg></span>
+        <span class="wcard__kind label">LinkedIn / PR</span><span class="wcard__title">PR Is Not Damage Control. It Is Narrative Architecture.</span><span class="wcard__dek">Stewardship of the long-term story.</span></button></li>
+
+      <li class="wcard" data-cat="think" style="--tone:#CFE3C8"><button data-open="ai" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="A friendly robot and a person's hand with a spark between them">
+          <rect class="f-ink" opacity=".14" x="0" y="152" width="240" height="28"/>
+          <g class="a-bob"><rect class="f-sky" x="52" y="62" width="64" height="58" rx="14" stroke="#1A1410" stroke-width="4"/><path d="M84 62V44" stroke="#1A1410" stroke-width="4"/><circle class="f-tom a-blink" cx="84" cy="40" r="6"/><circle class="f-cream" cx="70" cy="88" r="9"/><circle class="f-cream" cx="98" cy="88" r="9"/><circle class="f-ink" cx="70" cy="88" r="4"/><circle class="f-ink" cx="98" cy="88" r="4"/><path d="M72 106h24" stroke="#1A1410" stroke-width="4" stroke-linecap="round"/><rect class="f-mar" x="60" y="124" width="48" height="28" rx="8" stroke="#1A1410" stroke-width="4"/></g>
+          <path class="f-skin" d="M184 152v-34c0-8 4-12 10-12s10 4 10 12v34z" stroke="#1A1410" stroke-width="4"/><path class="f-skin a-point" d="M176 108l-26-14c-6-3-10 4-5 8l20 14z" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+          <g class="a-spark"><path class="f-mar2" d="M138 70l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/></g>
+        </svg></span>
+        <span class="wcard__kind label">LinkedIn / Technology</span><span class="wcard__title">AI Will Not Replace Agencies, Mediocrity Will.</span><span class="wcard__dek">Excellence adapts. Mediocrity resists.</span></button></li>
+
+      <li class="wcard" data-cat="think" style="--tone:#A9D6FF"><button data-open="tweets" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="Three little birds on a wire, tweeting">
+          <path d="M0 118Q120 140 240 118" stroke="#1A1410" stroke-width="3" fill="none"/>
+          <g class="a-bob"><ellipse class="f-tom" cx="52" cy="104" rx="20" ry="16"/><circle class="f-tom" cx="68" cy="88" r="11"/><path class="f-mar2" d="M77 88l12 3-12 4z"/><circle class="f-cream" cx="71" cy="86" r="3"/><circle class="f-ink" cx="72" cy="86" r="1.500"/></g>
+          <g class="a-bob" style="animation-delay:.5s"><ellipse class="f-mar2" cx="122" cy="110" rx="22" ry="17"/><circle class="f-mar2" cx="138" cy="93" r="12"/><path class="f-tom" d="M148 93l12 3-12 4z"/><circle class="f-cream" cx="141" cy="91" r="3"/><circle class="f-ink" cx="142" cy="91" r="1.500"/></g>
+          <g class="a-bob" style="animation-delay:1s"><ellipse class="f-leaf" cx="188" cy="108" rx="18" ry="14"/><circle class="f-leaf" cx="201" cy="94" r="10"/><path class="f-mar2" d="M209 94l10 3-10 3z"/><circle class="f-cream" cx="203" cy="92" r="2.500"/><circle class="f-ink" cx="204" cy="92" r="1.200"/></g>
+          <g class="a-pop"><rect class="f-cream" x="84" y="36" width="52" height="26" rx="8"/><path class="f-cream" d="M100 62l-6 10 16-10z"/><path d="M92 46h36M92 54h22" stroke="#1A1410" stroke-width="3" stroke-linecap="round"/></g>
+        </svg></span>
+        <span class="wcard__kind label">Tweets / Ten of them</span><span class="wcard__title">Short Takes on Brands</span><span class="wcard__dek">Visibility is rented. Credibility is earned.</span></button></li>
+
+      <li class="wcard" data-cat="copy" style="--tone:#EADBC2"><button data-open="mantrin" data-cursor="Read">
+        <span class="wcard__art"><svg viewBox="0 0 240 180" role="img" aria-label="A megaphone sending out sound waves and floating likes">
+          <rect class="f-ink" opacity=".14" x="0" y="152" width="240" height="28"/>
+          <g class="a-shake"><path class="f-tom" d="M64 78l70-34v90L64 102z" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/><rect class="f-mar2" x="40" y="76" width="28" height="28" rx="6" stroke="#1A1410" stroke-width="4"/><rect class="f-ink" x="72" y="104" width="14" height="30" rx="4"/></g>
+          <g class="a-wavefade" fill="none" stroke="#1A1410" stroke-width="4" stroke-linecap="round"><path d="M148 70q14 20 0 40"/><path d="M162 58q24 32 0 64" style="animation-delay:.3s"/><path d="M176 46q34 44 0 88" style="animation-delay:.6s"/></g>
+          <path class="f-tom a-up" d="M196 60c-6-8-18 0-10 10l10 9 10-9c8-10-4-18-10-10z"/><path class="f-leaf a-up" style="animation-delay:1s" d="M214 90c-5-7-15 0-9 8l9 8 9-8c7-8-4-15-9-8z"/>
+        </svg></span>
+        <span class="wcard__kind label">Brand copy / Blog</span><span class="wcard__title">Fast Track Your Growth</span><span class="wcard__dek">A blog written for Mantrin, a social media marketing agency in Chandigarh.</span></button></li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close scallop" id="hello" data-nav-bg="#FFC21F" data-nav-ink="#1A1410" aria-labelledby="close-title" style="--bg:var(--marigold)">
+  <div class="doodles" data-doodles="close" aria-hidden="true"></div>
+  <h2 id="close-title" class="close__title">Got a brand that needs a voice?</h2>
+  <p class="close__sub">Or a story that needs a home. Tell me about it.</p>
+  <a class="btn" data-magnet data-cursor="Write" href="mailto:?subject=Hello%20Kitty%2C%20let%27s%20work%20together">Say hello</a>
+  <p class="close__foot label">Kitty Chawla / Designer, brand strategist, writer</p>
+</section>
+
+</main>
+
+<!-- READER -->
+<div class="reader" id="reader" role="dialog" aria-modal="true" aria-labelledby="reader-title" hidden>
+  <div class="reader__bar"><button class="reader__close" id="readerclose" data-cursor="Close">Close</button><span class="reader__kind label" id="readerkind"></span><span class="reader__prog" id="readerprog"></span></div>
+  <div class="reader__scroll" id="readerscroll">
+    <div class="reader__art" id="readerart" aria-hidden="true"></div>
+    <article class="reader__text">
+      <h2 class="reader__title" id="reader-title"></h2>
+      <div class="reader__body" id="readerbody"></div>
+    </article>
+  </div>
+</div>
+
+<!-- ARTICLES (full text, shown in the reader) -->
+<div hidden>
+
+<template id="t-nani" data-title="Nani ka Ghar: A Sanctuary of Childhood" data-kind="Essay / Memoir">
+<p class="byline">By Kitty Chawla</p>
+<p>Once June rolled around, the anticipation of heading to Nani's house filled my heart. The last day of May seemed to drag on forever as I eagerly awaited the moment when I could pack my bags and embark on the journey to Nani's place. The morning of our departure was always bustling with activity. Mom would be busy packing our essentials while my sister and I gathered our favourite belongings in excitement.</p>
+<p>Finally, we would hop on the bus, ready to set off for Nani's house. Arriving at Nani's house was always a moment filled with pure joy. The sight of her welcoming smile along with the warmth of her embrace made us feel instantly at home. For Mom it was a precious reunion with her mother after what seemed like an eternity.</p>
+<p>Nani's house was a sanctuary where we could roam freely, sleep in as late as we wanted, and indulge in our favourite homemade delicacies crafted lovingly by Nani and Mami. We would spend hours chatting with Mami, listening in awe to the ancient tales by Nani and Nanu about their life's adventures and struggles. The best part was sleeping on the terrace under the sky full of stars, which rendered a feeling of contentment and happiness.</p>
+<p>Reuniting with cousins meant endless hours of playtime, silly fights over TV shows and cartoons, and making new friends among Mom's friends' children. Although these friendships were fleeting, they left a lasting imprint on our childhood manners.</p>
+<p>Accompanying Nani to the market to buy treats and new clothes was always a highlight, filled with laughter and excitement. But as the day before our departure dawned, a wave of bittersweet emotions washed over us. I would wander through every corner of Nani's home, trying to etch every memory into my mind, and I also captured those memories in my camera so that later, upon reaching home, I could feel the essence of good times.</p>
+<p>The morning of our departure, boarding the train from Nani's house was and has been the toughest farewell I have ever experienced in life till date. While I travelled through the day, I could smell the petrichor, and all the sowed crops unfurled in a way as if they were biding me adieu. And when our journey ended and our stop arrived, I stepped down from the train and saw it for one last time until I boarded it again, next time, next year.</p>
+<p>Today, as I look back on those summers, I realise how much things have changed. The carefree days have been replaced by the stress of adult life, filled with deadlines and responsibilities. Yet the memories of "Nani ka Ghar" remain etched in my heart as a testament to the most joyous days of my life.</p>
+<p>Sometimes I find myself yearning to stop time or to travel back to those moments of pure bliss, where the future seemed to be a distant friend and all that mattered was the joy of being surrounded by loved ones at Nani's home. Witnessing time pass steadily evokes a deep sense of nostalgia and longing for what once was. Years might have passed, but the essence of "Nani ka Ghar" lingers and is a persistent reminder of those stress-free days.</p>
+</template>
+
+<template id="t-stressed" data-title="Busy Being Stressed" data-kind="Essay / Satire">
+<p class="byline">By Kitty Chawla</p>
+<p>Peace, these days, feels like a celebrity sighting. Everyone claims they almost saw it once, somewhere between a yoga reel and a motivational podcast, but no one has actual proof. Our parents and grandparents had a simpler arrangement. When life misbehaved, they folded their hands and spoke to God. We, on the other hand, speak to bots, podcasts, playlists and occasionally to ourselves at three in the morning. One thing falls apart, a podcast comes to the rescue. The podcast fails, a song steps in. If nothing works, there is always scrolling, the emotional equivalent of chewing gum for the brain.</p>
+<p>Everyone is under pressure. Corporate employees chase deadlines that multiply faster than mosquitoes in monsoon. Students are chasing grades like their life depends on it. Graduates are stressed about getting jobs. Interns are stressed about getting noticed. Researchers chase conclusions while wondering if their peace was misplaced somewhere between chapter three and caffeine. Basically, no matter what stage of life you are in, peace is not part of the syllabus.</p>
+<p>We live in the age of constant hustle, where being busy is a personality trait and rest feels slightly illegal. Everyone is chasing something. Peace today is like a private island in the middle of the ocean. Everyone dreams of it, few can reach it and most only see it in someone else's pictures.</p>
+<p>We scroll through social media watching people vacationing, healing and manifesting, and feel stressed not by our own sorrows but by other people's happiness. Someone else's calm beach photo can ruin our perfectly miserable day. We say we are antisocial, but the truth is we are selectively social. We have time to scroll reels, post vacation stories and like inspirational quotes, but replying to a message feels like an emotional investment we cannot afford.</p>
+<p>We take social media breaks, go on trips for emotional detox and announce digital detoxes with great enthusiasm. The mind, however, refuses to cooperate. It continues to think about conversations, futures, past mistakes and imaginary arguments while the body is technically on vacation. Peace is promised, but anxiety insists on coming along as hand luggage.</p>
+<p>Every second person now has mental health issues and every third person has become a therapist. Trust issues, situationships and relationships fall apart under the noble excuse of protecting one's peace. Ask why things ended and the answer is ready made. We turned toxic, so we mutually parted ways.</p>
+<p>We complain about humans all the time, yet secretly want that one human who runs quietly in the background, needs no updates and never crashes.</p>
+<p>In the middle of all this chaos, peace has not disappeared. It has just become extremely camera shy. It avoids notifications, ignores hustle culture and refuses to compete. Maybe peace does not come with background music or a caption. Maybe it shows up quietly when we stop performing stress like it is a full-time job.</p>
+<p>Until then, we remain exactly what the times demand of us. Busy being stressed.</p>
+</template>
+
+<template id="t-judgemental" data-title="Busy Being Judgemental" data-kind="Essay / Humour">
+<p class="byline">By Kitty Chawla</p>
+<p>If there were an Olympic sport for unsolicited judgement, we as a society would bring home gold, silver and bronze, and then complain that the podium arrangement was not aesthetically pleasing.</p>
+<p>We have developed a remarkable talent. We can scan a human being from head to toe in under seven seconds and deliver a full performance review without ever having met them. Too thin. Too healthy. Too loud. Too quiet. Too ambitious. Too comfortable. Too overdressed. Too underwhelming. It is almost impressive how efficiently we reduce complex, breathing individuals into bullet points of perceived inadequacy.</p>
+<p>A girl walks into a room wearing bright lipstick. Someone whispers that she is trying too hard. Another walks in bare faced and is declared careless. A man speaks fluent English and is labelled arrogant. Another fumbles and is deemed incapable. The one who posts gym selfies is vain. The one who does not is lazy. There is apparently no correct way to exist without being audited.</p>
+<p>What fascinates me is our collective obsession with packaging. We inspect bodies like we are quality control managers in a biscuit factory. We evaluate dressing style as though the fate of civilisation depends on whether someone paired sneakers with a kurta. Communication style is dissected with the seriousness usually reserved for constitutional amendments. If you are soft spoken you lack confidence. If you are assertive you lack manners. Somewhere in between lies the mythical personality that satisfies everyone, much like a mythical creature that no one has actually seen.</p>
+<p>Meanwhile, we are each walking around with our own generous collection of flaws. Emotional baggage that could qualify for excess luggage fees. Insecurities we keep tucked away like expired coupons. Habits we promise to fix every Monday. Yet when it comes to others, we demand perfection as though we are placing a custom order with the universe. Fair complexion with confidence on the side. Intelligence without ego. Fashionable but not attention seeking. Successful but not intimidating. Human but only in ways that are convenient to us.</p>
+<p>The irony is delicious. We are busy pointing out what is wrong with others while carefully avoiding mirrors, both literal and metaphorical. It is much easier to critique someone's outfit than to examine our own impatience. Simpler to mock someone's accent than to confront our own narrow mindedness. We call it concern, feedback, standards. Sometimes it is simply projection wearing a respectable outfit.</p>
+<p>Social media has only upgraded our judgement to high speed broadband. A single photograph can invite a parade of opinions. Who asked for them is a question that remains unanswered. We scroll through curated lives and become instant experts on how others should live, love, eat, work and age. We forget that behind every filtered picture is a person navigating life with the same messy uncertainty we privately endure.</p>
+<p>Perhaps the real issue is that judgement offers a temporary illusion of superiority. For a fleeting moment, by highlighting someone else's perceived shortcomings, we feel taller. More sorted. More evolved. It is a quick ego snack. Unfortunately it is as nutritious as junk food and just as addictive.</p>
+<p>Imagine if we redirected even half that energy inward. Not in the self-critical, spiral-into-despair way. But in the honest, gentle way. What if before commenting on someone's body, we examined our own relationship with insecurity. Before dismissing someone's intellect, we questioned our own willingness to learn. Before laughing at someone's dressing style, we asked why difference unsettles us.</p>
+<p>We are all imperfect drafts, constantly under revision. Expecting others to be final editions while we ourselves are scribbled with corrections is not only unfair, it is faintly absurd.</p>
+<p>So the next time the inner judge prepares to pass a verdict on someone's appearance, outfit or articulation, perhaps we could pause. Take a breath. Remember that we too are someone else's seven-second assessment waiting to happen.</p>
+<p>A little less scrutiny, a little more grace. After all, none of us came with a user manual. We are all figuring it out, one flawed, fabulous day at a time.</p>
+</template>
+
+<template id="t-love" data-title="Love Hides Behind the Show" data-kind="Essay / Culture">
+<p class="byline">By Kitty Chawla</p>
+<p>There was a time when love grew like a shy plant on a sunny balcony. It needed patience, quiet moments and the occasional watering of attention. People wrote letters that smelled faintly of perfume and hope. A flower tucked in a notebook could make someone blush for a week. Romance was gentle and private, the emotional equivalent of slow cooking.</p>
+<p>Today, love feels like a dish prepared for a cooking show. It is marinated, plated, garnished and then offered to the world for approval. Loyalty may be low on the national inventory, but admiration for grand gestures is at an all-time high. The same people who forget to reply to their partners for hours turn into soft puddles when they see Virat Kohli kissing his wedding ring on the field for Anushka Sharma. They say we want a love like that, without pausing to check if they possess even half the commitment, not to mention the stamina to run between wickets.</p>
+<p>It is quite a paradox. We want the romance of Veer Zaara without the patience of waiting at a border. We want the sweetness of Aditya Kashyap from Jab We Met, but we often behave like someone who went to the gym, pulled an emotional muscle and came out as Kabir Singh. Even Prem from Ajab Prem Ki Gazab Kahani, who once could not confess his feelings without tripping over his own sincerity, has transformed into an animal who can growl, glare and slap his partner. Love on screen has become a high voltage appliance. Touch at your own risk!</p>
+<p>Romance is now less about connection and more about choreography. Weddings look like film sets. Couples rehearse their "natural moments" as if spontaneity were a syllabus subject and they were to be graded by online evaluators.</p>
+<p>Everyone wants to recreate the love story of a celebrity without realising that most of these stories come with editors, lighting experts and professional makeup artists. It is like expecting your home made paratha to look like a five star roti and then blaming the atta for having trust issues.</p>
+<p>Sometimes social media turns love into a headline. Palash Muchhal's dreamy proposal to Smriti Mandhana on the very field where she won the World Cup made everyone swoon online, only to remind us that even the most spectacular declarations can disappear faster than a trending audio clip.</p>
+<p>Even music tells us how much we have changed. From Kishore da singing "pal pal dil ke paas" like a man confessing to the moon, we now have "Saiyaara tu to badla nahi hai mausam zara sa rutha hua hai", which sounds like someone trying to negotiate emotional distance over a very patchy network.</p>
+<p>Earlier, even obscenity was politely hidden behind flowers. Today, web series dissect intimacy with the enthusiasm of someone tearing gift wrapping paper. Privacy is treated like land in a crowded city. Everyone wants a piece of it but no one knows how to protect it.</p>
+<p>And then there are the rare stories that remind us what love can look like when no one is watching. Think of Dimple Cheema, who loved Captain Vikram Batra with a quiet certainty that needed no ceremony and no audience. Her devotion was not curated for approval. It was simply lived, steady and unwavering, untouched by the noise that surrounds us today.</p>
+<p>Beneath the noise, our hearts remain strangely old fashioned. We still want sincerity, even if we are slightly embarrassed to admit it. We want someone who chooses us without needing a camera to record, a ring to kiss or a trending reel to prove it.</p>
+<p>Love still exists. It whispers in the quiet moments, avoids the cameras, skips the hashtags, and somehow manages to be infinitely more satisfying than any viral moment.</p>
+</template>
+
+<template id="t-invisible" data-title="Invisible Hands, Unheard Voices" data-kind="Feature / Journalism">
+<p class="byline">By Kitty Chawla</p>
+<p>She steps out of her house before the sun rises, her broom resting on her shoulder. The streets are silent, the city still asleep, but she is already at work. The cold morning air offers little comfort, knowing that by midday, the heat will become unbearable. She begins sweeping, her movements mechanical, practised over thirteen years. Dry leaves and dust swirl around her feet as she clears the roads that will soon be filled with hurried footsteps and moving vehicles. Her family of four depends on her income, yet the salary barely covers the essentials. There is no luxury, no savings, no security, just survival. Education was never an option for her, but she dreams of a different future for her children. She wants them to study, to have better jobs, to escape the struggles she has known all her life. Across India, nearly 5 million sanitation workers share this hope, many of them women from marginalised communities who face the harshest of realities every day.</p>
+<p>Her work is endless, but recognition is rare. Some people treat her with kindness, but many do not. They walk past her without acknowledgement, some even looking at her with disgust. When she tries to participate in a moment of joy, perhaps asking for a small token during someone's celebration, she is met with sharp words: "Don't you get a salary?" The sting of those words lingers long after they are spoken. Spring brings the hardest days. More leaves fall, the workload doubles, and the festivals that bring joy to others only add to her burden. She and her co-workers were promised extra pay for their additional efforts during the lockdown, but that promise was never fulfilled. The betrayal weighs heavily on her, yet she has no choice but to continue. There is no escape from this work, no opportunity to pause, even when she is unwell.</p>
+<blockquote>"No matter how sick we are, no matter how hot or cold it is, we must work. There are no holidays for us."</blockquote>
+<p>The complaints never stop. If the streets are dirty, they are blamed. If the work is not done fast enough, they are scolded. "If the roads are dirty, we get scolded. No one ever thanks us, only complaints," she says, shaking her head. There is no appreciation from the authorities, no sense of job security. Many of them work for years, hoping to become permanent employees, hoping to earn a pension so they will not have to rely on their children in old age. But for most, that hope remains unfulfilled. In India, despite legal bans on manual scavenging, enforcement remains weak, leaving workers like her vulnerable to exploitation.</p>
+<p>The nature of sanitation work exposes women to severe health risks: respiratory disorders, infections, musculoskeletal problems. Studies show that despite these dangers, many sanitation workers are left without protective gear or healthcare access. The strain is unbearable, both physically and mentally. She remembers one of her fellow workers, a woman who had spent years in this job, waiting for it to become permanent. The stress of uncertainty, of struggling without a future, became too much for her. She suffered a heart attack and just like that, she was gone. "She died because she was worried about the future. No pension, no security, only struggle," she says softly, eyes downcast.</p>
+<p>Despite everything, she pushes forward, motivated by the thought of her children. "We want them to study, to get good jobs. We don't want them to end up like us," she says firmly. She sacrifices her own comfort, her own dreams, in the hope that they will have a life free from the hardships she endures every day. She promised her children she would take them to Mansa Devi temple. She still has not. There is always work, always another road to clean, always another pile of trash waiting for her hands. Her promises, like the city's, remain unfulfilled.</p>
+<p>As she walks away, the dust settles behind her. The road is clean now, ready to be walked on, ready to be forgotten. She will return tomorrow, just as she has for the past thirteen years, unseen yet essential, hoping that one day, the world will see her not as just a worker, but as a human being.</p>
+<p>But the question remains. Will she, and others like her, ever be seen?</p>
+</template>
+
+<template id="t-freedom" data-title="77 Years of Independence: Freedom, But For Whom?" data-kind="Essay / Op-ed">
+<p class="byline">By Kitty Chawla</p>
+<p>Seventy seven years on, the tricolour still soars, yet for many its promise feels hollow. On paper we are sovereign; in reality, millions live in a brittle liberty where survival eclipses pride.</p>
+<p>Small scale businesses, once the economy's backbone, gasp for air under inflation, corporate dominance, and abrupt policy shifts. Pandemic scars remain as raw materials grow dearer, compliance burdens multiply, and local markets vanish under online glare.</p>
+<p>Education, once the great equaliser, now guards its gates. Families sink into debt for quality schooling as public institutions wither. For the rural child or urban poor, the ladder to mobility is being pulled away.</p>
+<p>Dissent is muted, opposition mics silenced over Bihar polls and Operation Sindoor. Delhi's stray dogs are swept away, while rabies, waste, and humane care remain ignored. Even our disputes draw foreign arbiters. Academia bends to political mood, and caste still scripts destiny.</p>
+<p>Natural disasters lay bare the cracks in governance. Floods submerge homes, displace families, and drown livelihoods, while those elected to serve grow weary of the very responsibility they once sought. The gap between leadership and the people widens, and faith in the democratic promise weakens.</p>
+<p>We have the symbols of freedom but not always its substance. True independence is not marked by anniversaries alone, but by the dignity, security, and equality lived each day. Until that is realised, our freedom remains a work in progress.</p>
+</template>
+
+<template id="t-unsaid" data-title="Unsaid Goodbyes" data-kind="Poem" data-poem="1">
+<p class="byline">By Kitty Chawla</p>
+<p class="stanza">Some friends walked beside us<br>Until the road asked for space,<br>No argument, no sudden storm<br>Just a widening of pace.</p>
+<p class="stanza">The distance did not arrive at once<br>It learned our daily air,<br>It settled into common things<br>A thought, a chair, a stair.</p>
+<p class="stanza">We miss them in an easy way<br>Like evenings miss the sun,<br>Not wishing daylight back again<br>Just knowing it is done.</p>
+<p class="stanza">What once felt steady was often light,<br>Like laughter held in time,<br>They felt like constants in our lives<br>Till growth redrew the line.</p>
+<p class="stanza">With passing years, we understood<br>Why fewer paths feel kind,<br>Peace does not need crowded rooms,<br>Just a clearer, steadier mind.</p>
+<p class="stanza">So we walked on, both shaped and free<br>By roads that could not stay,<br>Unsaid goodbyes did not break us<br>They taught us how to stay.</p>
+</template>
+
+<template id="t-drones" data-title="When missiles blaze and drones descend" data-kind="Poem" data-poem="1">
+<p class="byline">By Kitty Chawla</p>
+<p class="stanza">When missiles blaze and drones descend,<br>Our heroes rise, our skies defend.<br>Through grids of fire, they hold the line,<br>With grit and grace, their courage shines.</p>
+<p class="stanza">They bear the weight we cannot see,<br>So we can live and still be free.<br>With every breath, they stake their claim,<br>Not for glory, but in our name.</p>
+<p class="stanza">Let not our voices turn to noise,<br>But rise with truth, in one clear voice.<br>No room for lies, no space for hate,<br>Let unity decide our fate.</p>
+<p class="stanza">Do not spread the unconfirmed,<br>Let facts be heard, not chaos churned.<br>Let every post, each whispered word,<br>Reflect the care our hearts have stirred.</p>
+<p class="stanza">When sirens sound and fear is near,<br>Stay calm, stay safe, hold loved ones dear.<br>Pray for the lives on border land,<br>May peace and safety hold their hand.</p>
+<p class="stanza">Hold close your kin, your neighbor too,<br>For strength is born when hearts are true.<br>The soldier fights, but so must we,<br>With courage, trust, and empathy.</p>
+<p class="stanza">Salute to those who guard our land,<br>so fearless, firm, and true,<br>Sons and daughters of Bharat Ma,<br>we owe our peace to you.</p>
+<p class="stanza">Let's stand as one, firm, awake,<br>For country's soul is ours to make.<br>And when peace dawns beyond this night,<br>We'll rise together, wrapped in light.</p>
+</template>
+
+<template id="t-voice" data-title="If They Had a Voice" data-kind="Photo story">
+<p class="byline">Photographs and words by Kitty Chawla</p>
+<figure class="reader__photo"><img loading="lazy" src="assets/img/w-2076.webp" alt="Four black and white photographs: a rose in the rain, an empty school desk and chairs, a street dog waiting in the rain, and a car side mirror covered in raindrops, each with a line of imagined speech"></figure>
+<p>What would the things around us say if they could speak on a rainy day?</p>
+<p><b>The Rose:</b> "I'm the one who blooms in the rain, my life gets rejoiced with the water drops, I rejuvenate as I get nourished by the rain."</p>
+<p><b>The Desk:</b> "When it rains, I miss the gossips kids get for me, I wait for the books to lie on me, I remain vacant as I want the kids to sit on me."</p>
+<p><b>The Dog:</b> "When it rains, I wander here and there in search of some shelter but don't get any. My life gets monotonous and I wander in vain."</p>
+<p><b>The Side Mirror:</b> "I get cleaned as the rain drops pour on me. I even get hurt when the hail falls on me. I get both elated and dejected when the water drops and hail fall on me."</p>
+</template>
+
+<template id="t-psa" data-title="PSA on Eve Teasing During Holi" data-kind="Script / Short film">
+<p class="byline">Concept and story by Kitty Chawla</p>
+<p class="script"><b>FADE IN:</b></p>
+<p class="script"><b>EXT. STREET.</b> The opening scene starts with three girls bidding adieu to each other as they part ways. The girls leave and the camera focuses on one girl (Girl 1, the main lead) walking alone. A few miles away, Girl 1 comes across two boys, who are approaching her.</p>
+<p class="script"><b>BOY 1</b> (smirking, with mean intentions) takes a handful of colour from his friend, walks towards the girl and throws it on her face.</p>
+<p class="script"><b>GIRL 1</b> (angrily): Ye kya badtameezi hai?</p>
+<p class="script"><b>BOY 1:</b> Bura na mano, Holi hai!</p>
+<p class="script">The girl feels a little uncomfortable, but gathers courage and gives a fitting reply.</p>
+<p class="script"><b>GIRL 1</b> (courageously): Holi hai to badtameezi karoge? Bura manungi, Holi hai.</p>
+<p class="script"><b>BOY 1</b> shakes his head with shame, with a realisation.</p>
+<p class="script">The scene ends with the girl walking with confidence while the two boys keep looking at her as she walks.</p>
+<p class="script"><b>FADE OUT.</b></p>
+<h3>Closing text on screen</h3>
+<blockquote>"Holi is a festival of colours and joy, but it should never be an excuse for sexual harassment. Ignoring it and getting suppressed is not okay. Raise your voice and take a stand for yourself. Iss Holi, bura manenge."</blockquote>
+<p>"Legal punishment for sexual harassment during Holi: imprisonment for up to 3 years and a fine under Section 354A of the Indian Penal Code."</p>
+<p>"Say no to eve-teasing during Holi. Report any such incidents to the authorities."</p>
+<p>Helpline numbers: Women's Helpline 181, National Commission for Women 1091.</p>
+</template>
+
+<template id="t-trust" data-title="Trust: The Only Currency That Does Not Depreciate" data-kind="LinkedIn / Leadership">
+<p class="byline">By Kitty Chawla</p>
+<p>In an era governed by velocity, valuation and visibility, there remains one asset that quietly outperforms every metric on the balance sheet: trust. Markets fluctuate. Attention spans diminish. Trends expire with startling haste. Yet trust compounds. It does not erode with time; it strengthens through consistency, integrity and delivery.</p>
+<p>Organisations often put a lot of money into growth strategies, performance marketing, and expansion stories. Few invest equally in credibility. Yet credibility quietly drives lasting success. It affects investor confidence, customer loyalty, employee dedication, and stakeholder goodwill in ways that no advertising budget can match.</p>
+<p>Trust is built slowly but can be lost in an instant. It grows through honest communication, ethical choices, and the bravery to put principles before quick gains. In leadership, it shows as reliability. In brands, it comes through as authenticity. In institutions, it appears as legitimacy. What sets respected companies apart from those that are just visible is not just size, but steady character. When promises are kept, when accountability is accepted, and when values are firm, trust stops being just an idea and becomes valuable capital.</p>
+<p>In a hyperconnected world where scrutiny is constant and memory is permanent, trust is no longer optional. It is foundational. It is the only currency that appreciates with disciplined stewardship and depreciates only through neglect.</p>
+<p>Those who understand this do not chase applause. They cultivate assurance. And in doing so, they build reputations that outlast cycles, crises and competition. Because while markets may correct, and narratives may shift, trust remains the ultimate reserve of enduring influence.</p>
+</template>
+
+<template id="t-pr" data-title="PR Is Not Damage Control. It Is Narrative Architecture." data-kind="LinkedIn / PR">
+<p class="byline">By Kitty Chawla</p>
+<p>Public relations often suffers from a narrow view. Many see it as a tool that only comes into play during a crisis, acting as a defence when a reputation is in danger. This view is not just incomplete; it is severely limiting. PR is not a fire extinguisher hanging on the corporate wall, to be used only when there is a fire. It is the plan for how an organisation is understood, remembered, and trusted.</p>
+<p>Narrative architecture starts long before any controversy arises. It involves intentionally building identity, values, and voice. It defines what a company does and what it stands for. It shapes perception with foresight instead of just reacting urgently. In a world full of information and opinions, silence creates confusion. Confusion invites speculation. Effective public relations ends that void. It creates clarity, consistency, and credibility at every point where stakeholders interact.</p>
+<p>The most resilient organisations do not communicate sporadically. They communicate strategically. They articulate purpose with precision. They align leadership messaging with institutional values. They ensure that every public statement reinforces a coherent and credible narrative. When crisis inevitably arrives, as it often does in dynamic markets, a well-constructed narrative does not collapse. It absorbs pressure. It provides context. It allows the organisation to respond from a position of established trust rather than fragile optics.</p>
+<p>Damage control is reactive. Narrative architecture is proactive. The former aims to contain issues. The latter builds commitment. PR, when done well, is not about spinning stories. It is about managing reputation. It involves maintaining credibility. It focuses on the long-term story an organisation chooses to share with the world.</p>
+<p>PR at its finest is not about spin. It is about stewardship. Stewardship of reputation. Stewardship of credibility. Stewardship of the long-term story an organisation chooses to tell the world. Those who reduce it to crisis management misunderstand its power. Those who treat it as narrative design understand that perception, when shaped with integrity and foresight, becomes one of the most formidable strategic assets a brand can possess.</p>
+</template>
+
+<template id="t-ai" data-title="AI Will Not Replace Agencies, Mediocrity Will." data-kind="LinkedIn / Technology">
+<p class="byline">By Kitty Chawla</p>
+<p>The apprehension is not without reason. Each technological inflection point rekindles the same uneasy inquiry: who stands to be displaced?</p>
+<p>Artificial Intelligence has undoubtedly altered the mechanics of our industry. It accelerates research. It refines data. It drafts, analyses and optimises with astonishing efficiency. To ignore its capability would be intellectual complacency. However, tools have never replaced excellence; they have only improved it. Agencies were never designed to compete solely on speed, volume, or templated output. If those are the only factors that matter, then the risk of failure was clear long before AI showed up.</p>
+<p>Technology cannot replicate judgment. It cannot sense cultural nuances with lived experience. It cannot build trust in a boardroom through human conviction. It cannot navigate complex stakeholder feelings with emotional intelligence. It does not bear accountability in the way that leadership must.</p>
+<p>AI will set a new standard. It will remove repetitive mediocrity, shorten timelines, and address inefficiency. But it will not replace strategic imagination, ethical judgment, or the courage to suggest bold yet responsible ideas. The real threat is not artificial intelligence but intellectual stagnation. It is agencies that depend on predictable thinking, recycled frameworks, and comfort in routine.</p>
+<p>Those who grow, who integrate technology without losing human insight, will not fade away. They will become sharper, faster, and more knowledgeable. In every disruptive era, one principle remains true: excellence adapts while mediocrity resists. And resistance, not innovation, ultimately fades into irrelevance.</p>
+<p>AI is not the enemy; it is the tool. The results depend entirely on the quality of the people who use it.</p>
+</template>
+
+<template id="t-tweets" data-title="Short Takes on Brands" data-kind="Tweets">
+<p class="byline">By Kitty Chawla</p>
+<div class="tweet"><p>Creativity is not decoration.<br>It is problem solving with imagination.<br>If it does not move business metrics, it is art.<br>If it moves markets, it is strategy.</p><small>#StrategicCreativity #AdvertisingExcellence #BusinessImpact #MarketingLeadership</small></div>
+<div class="tweet"><p>Visibility is rented.<br>Credibility is earned.<br>Brands that understand the difference outlast the algorithm.</p><small>#BrandStrategy #LeadershipThinking #ReputationCapital #LongTermGrowth</small></div>
+<div class="tweet"><p>In a fragmented media world, integration is not optional.<br>Your ATL, BTL and Digital must speak the same language.<br>Consistency builds memory.<br>Memory builds brands.</p><small>#IntegratedMarketing #360DegreeMarketing #BrandConsistency #MediaStrategy</small></div>
+<div class="tweet"><p>A 360 degree approach is not about doing everything.<br>It is about connecting everything.<br>Strategy without execution is theory.<br>Execution without strategy is noise.</p><small>#360Solutions #IntegratedCommunication #ExecutionExcellence #MarketingStrategy</small></div>
+<div class="tweet"><p>Trends change weekly.<br>Brand fundamentals do not.<br>Build for longevity, not virality.</p><small>#BrandLeadership #FutureFocused #EnduringBrands #MarketingWisdom</small></div>
+<div class="tweet"><p>Performance marketing can drive clicks.<br>Brand marketing drives conviction.<br>Sustainable growth demands both.</p><small>#PerformanceMarketing #BrandBuilding #SustainableGrowth #BalancedStrategy</small></div>
+<div class="tweet"><p>The market does not reward effort.<br>It rewards differentiation.<br>If your brand sounds like everyone else, you are already invisible.</p><small>#CompetitiveAdvantage #BrandStrategy #MarketLeadership #StandOut</small></div>
+<div class="tweet"><p>AI will not replace agencies.<br>But agencies that understand AI will replace those that do not.<br>Technology is an accelerator.<br>Strategy is still the driver.</p><small>#ArtificialIntelligence #AgencyLeadership #FutureOfMarketing #DigitalTransformation</small></div>
+<div class="tweet"><p>The real power of AI is not automation.<br>It is augmentation.<br>When intelligence meets imagination, scale meets precision.</p><small>#AIRevolution #CreativeStrategy #MarketingEvolution #TechEnabled</small></div>
+<div class="tweet"><p>PR is not about firefighting.<br>It is about foresight.<br>Narratives built with intent withstand storms with dignity.</p><small>#CorporateCommunication #NarrativeBuilding #CrisisPreparedness #ExecutiveLeadership</small></div>
+<div class="tweet"><p>Advertising does not create demand from nothing.<br>It amplifies relevance that already exists.<br>If the product is weak, the campaign will only reveal it faster.</p><small>#MarketTruths #StrategicMarketing #BrandClarity #BusinessGrowth</small></div>
+</template>
+
+<template id="t-mantrin" data-title="Fast Track Your Growth With the Best Social Media Marketing Services in Chandigarh" data-kind="Brand copy / Blog">
+<p class="byline">Written for Mantrin by Kitty Chawla</p>
+<p>In today's digital first world, social media marketing plays a crucial role in driving business growth. It is where brands build visibility, create conversations, influence decisions, and establish long term relationships with their audience. From brand discovery to final purchase, social platforms shape every stage of the customer journey. Mantrin proudly stands as the best social media marketing services in the region, helping businesses transform their online presence into measurable growth. This is why businesses looking to scale strategically are investing in the best social media marketing services in Chandigarh to stay competitive and relevant in an ever evolving market.</p>
+<p>Social media today is not just about presence but about purpose. Customers expect authenticity, consistency, and value from brands they follow. Mantrin understands this shift and helps businesses create meaningful digital experiences that resonate with their audience. With a deep understanding of consumer behaviour and platform dynamics, Mantrin ensures brands do not just exist online but grow with impact.</p>
+<h3>Strategy That Converts Attention Into Growth</h3>
+<p>Mantrin approaches social media marketing with clarity and intent. Instead of random posting, the team focuses on building a structured roadmap aligned with business goals. Every strategy begins with audience research, market analysis, and brand positioning to ensure communication is relevant and effective.</p>
+<p>Whether it is Instagram for visual storytelling, Facebook for community engagement, or LinkedIn for professional branding, Mantrin ensures a consistent brand voice across all platforms. This strategic execution helps businesses strengthen credibility and build lasting connections with their audience.</p>
+<h3>Creativity That Builds Strong Brand Recall</h3>
+<p>In a crowded digital space, creativity is what separates brands from competitors. Mantrin brings together designers, content creators, and strategists who understand how to craft visually compelling and emotionally engaging content. Every creative asset is designed to capture attention and inspire interaction.</p>
+<p>Mantrin believes creativity must always support strategy. Their content not only looks appealing but also communicates value. This balance of design and storytelling helps brands remain memorable and relevant in the minds of their audience.</p>
+<h3>Data Driven Campaigns With Measurable Results</h3>
+<p>Growth driven marketing requires constant evaluation. Mantrin adopts a data focused approach to monitor engagement, reach, audience insights, and conversions. Campaigns are optimised continuously to ensure improved performance and higher returns.</p>
+<p>Clients receive transparent insights that reflect real progress. By combining analytics with creative refinement, Mantrin delivers campaigns that generate tangible business outcomes and long term digital growth.</p>
+<h3>Industry Expertise That Strengthens Execution</h3>
+<p>With experience across industries such as real estate, education, retail, wellness, and corporate sectors, Mantrin understands diverse consumer mindsets and business challenges. This allows them to tailor strategies that align with specific industry needs and audience expectations.</p>
+<p>Whether launching a new product, promoting a service, or strengthening brand identity, Mantrin adapts its approach to support sustainable growth and brand authority.</p>
+<h3>Integrated Digital Solutions for Complete Online Presence</h3>
+<p>Social media success works best when supported by a strong digital ecosystem. Mantrin offers a complete range of services including search engine optimisation, paid advertising, content marketing, branding, and online reputation management.</p>
+<p>This integrated approach ensures consistency across all digital touch-points and helps businesses maximise visibility, engagement, and conversions through a unified strategy.</p>
+<h3>Partner With Mantrin for Sustainable Digital Growth</h3>
+<p>Choosing the right digital partner can redefine your growth journey. Mantrin combines strategy, creativity, and performance driven execution to help brands scale with confidence. Their client focused approach ensures personalised solutions aligned with long term goals.</p>
+<p>If you are ready to strengthen your online presence, attract the right audience, and achieve measurable results, it is time to invest in digital marketing services in Chandigarh with Mantrin. With expertise and innovation, Mantrin helps businesses turn digital potential into lasting success, brand authority, and long term market leadership.</p>
+</template>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
