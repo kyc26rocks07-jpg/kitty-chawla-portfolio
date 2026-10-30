@@ -13,9 +13,47 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Lora:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+/* loader: pick one of three entrances per visit (never the same twice in a row). ?lv=a|b|c forces one. */
+(function () {
+  try {
+    var q = new URLSearchParams(location.search).get('lv');
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || location.hash.indexOf('#read-') === 0) return;
+    var all = ['a', 'b', 'c'], last = null;
+    try { last = localStorage.getItem('kc-lv'); } catch (e) {}
+    var pool = all.filter(function (x) { return x !== last; });
+    var v = all.indexOf(q) > -1 ? q : pool[Math.floor(Math.random() * pool.length)];
+    try { localStorage.setItem('kc-lv', v); } catch (e) {}
+    document.documentElement.setAttribute('data-lv', v);
+    document.documentElement.classList.add('is-loading');
+  } catch (e) {}
+})();
+</script>
 </head>
 <body>
 
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__dots">
+    <span style="--k:0;--x:50%;--y:50%;--s:46vmax;--c:#FFC21F"></span>
+    <span style="--k:1;--x:18%;--y:28%;--s:38vmax;--c:#FF5436"></span>
+    <span style="--k:2;--x:84%;--y:24%;--s:36vmax;--c:#A9D6FF"></span>
+    <span style="--k:3;--x:78%;--y:82%;--s:40vmax;--c:#2E5E3E"></span>
+    <span style="--k:4;--x:12%;--y:80%;--s:34vmax;--c:#FFB3C7"></span>
+    <span style="--k:5;--x:50%;--y:50%;--s:24vmax;--c:#FFF3DA"></span>
+  </div>
+  <div class="loader__cards">
+    <img style="--k:0;--x:2%;--y:10%;--r:-8deg" src="assets/img/d-yoga.webp" alt="">
+    <img style="--k:1;--x:76%;--y:6%;--r:6deg" src="assets/img/d-adsecure.webp" alt="">
+    <img style="--k:2;--x:3%;--y:60%;--r:5deg" src="assets/img/d-homekrafted2.webp" alt="">
+    <img style="--k:3;--x:75%;--y:58%;--r:-6deg" src="assets/img/d-cyber.webp" alt="">
+  </div>
+  <div class="loader__strips"><span style="--k:0;--c:#FFC21F"></span><span style="--k:1;--c:#FF5436"></span><span style="--k:2;--c:#2E5E3E"></span><span style="--k:3;--c:#A9D6FF"></span><span style="--k:4;--c:#FFB3C7"></span><span style="--k:5;--c:#34190D"></span></div>
+  <div class="loader__plate">
+    <p class="loader__name"><span class="loader__first"><span style="--i:0">K</span><span style="--i:1">i</span><span style="--i:2">t</span><span style="--i:3">t</span><span style="--i:4">y</span></span><span class="loader__last"><span style="--i:5">C</span><span style="--i:6">h</span><span style="--i:7">a</span><span style="--i:8">w</span><span style="--i:9">l</span><span style="--i:10">a</span></span></p>
+    <p class="loader__hello">hello!</p>
+  </div>
+  <div class="loader__track"><span class="loader__line"></span><svg class="loader__star" viewBox="0 0 40 40"><path d="M20 3c1.5 8.500 4 12.500 17 17-13 4.500-15.500 8.500-17 17-1.500-8.500-4-12.500-17-17C16 15.500 18.500 11.500 20 3z" stroke-linejoin="round"/></svg></div>
+</div>
 <!-- doodle sprite: decorative shapes reused by the drifting background layers -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>

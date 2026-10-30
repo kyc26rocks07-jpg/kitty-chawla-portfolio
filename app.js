@@ -115,6 +115,24 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
   if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(document.body);
 
+  /* ---------- loader: waits for the page, plays at least one full beat, then exits ---------- */
+  const loader = $('#loader');
+  if (loader) {
+    const root = document.documentElement;
+    if (!root.classList.contains('is-loading')) loader.remove();
+    else {
+      const MIN = 2300, t0 = performance.now();
+      const loaded = new Promise(res => document.readyState === 'complete' ? res() : addEventListener('load', res, { once: true }));
+      const fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+      const cap = new Promise(res => setTimeout(res, 5000));
+      Promise.race([Promise.all([loaded, fonts]), cap]).then(() => {
+        setTimeout(() => {
+          loader.classList.add('is-out');
+          setTimeout(() => { loader.remove(); root.classList.remove('is-loading'); remeasure(); }, 1250);
+        }, Math.max(0, MIN - (performance.now() - t0)));
+      });
+    }
+  }
   /* ---------- pointer in hero ---------- */
   let mx = 0, my = 0, tx = 0, ty = 0;
   if (!reduce && fine) {

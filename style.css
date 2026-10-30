@@ -480,3 +480,59 @@ svg [class*="a-"] { transform-box: fill-box; transform-origin: center; }
   .paper { clip-path: none; opacity: 1; }
   .reader { transition: none; }
 }
+
+/* LOADER: three entrances, picked per visit */
+.loader { position: fixed; inset: 0; z-index: 200; display: none; background: var(--cream); overflow: hidden; clip-path: circle(150% at 50% 50%); }
+html.is-loading { overflow: hidden; }
+html.is-loading .loader { display: block; }
+html.is-loading .hero *, html.is-loading .hero { animation-play-state: paused !important; }
+.loader__dots, .loader__cards, .loader__strips { position: absolute; inset: 0; display: none; }
+html[data-lv="a"] .loader__dots, html[data-lv="b"] .loader__cards, html[data-lv="c"] .loader__strips { display: block; }
+.loader__plate { position: absolute; z-index: 3; left: 50%; top: 46%; translate: -50% -50%; text-align: center; width: max-content; max-width: 92vw; }
+.loader__name { margin: 0; font-family: var(--font-display); line-height: .86; letter-spacing: -.015em; }
+.loader__first, .loader__last { display: block; }
+.loader__first { font-size: clamp(4.6rem, 18vw, 13rem); }
+.loader__last { font-size: clamp(3.4rem, 13vw, 9.5rem); color: var(--tomato); }
+.loader__name span span { display: inline-block; animation: letter-in .8s var(--spring) both; animation-delay: calc(var(--i) * 80ms + .25s); }
+.loader__hello { margin: .4rem 0 0; font-family: var(--font-hand); font-size: clamp(1.3rem, 3.4vw, 2rem); transform: rotate(-4deg); animation: rise .6s var(--ease) 1.1s both; }
+.loader__track { position: absolute; z-index: 3; left: 50%; bottom: calc(9vh + env(safe-area-inset-bottom)); width: min(70vw, 520px); height: 30px; transform: translateX(-50%); }
+.loader__line { position: absolute; left: 0; right: 0; top: 14px; height: 3px; border-radius: 3px; background: var(--ink); transform-origin: left; animation: fill var(--lt, 1.9s) cubic-bezier(.5, 0, .3, 1) both; }
+.loader__star { position: absolute; left: 0; top: 0; width: 30px; height: 30px; fill: var(--marigold); stroke: var(--ink); stroke-width: 2.4; animation: ride var(--lt, 1.9s) cubic-bezier(.5, 0, .3, 1) both, turn 1.2s linear infinite; }
+@keyframes fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes ride { from { left: 0; } to { left: calc(100% - 30px); } }
+
+/* a: gulal splash */
+.loader__dots span { position: absolute; left: var(--x); top: var(--y); width: var(--s); height: var(--s); margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2); border-radius: 50%; background: var(--c); transform: scale(0); animation: splat .9s var(--spring) both; animation-delay: calc(var(--k) * 130ms + .1s); }
+@keyframes splat { to { transform: scale(1); } }
+html[data-lv="a"] .loader__plate { background: var(--cream); padding: .6rem 1.8rem 1rem; border: 2px solid var(--ink); border-radius: 8px; box-shadow: 4px 5px 0 rgba(26,20,16,.9); animation: rise .6s var(--ease) .9s both; }
+html[data-lv="a"] .loader__name span span { animation-delay: calc(var(--i) * 80ms + 1.1s); }
+html[data-lv="a"] .loader__hello { animation-delay: 1.9s; }
+html[data-lv="a"] { --lt: 2.3s; }
+
+/* b: your designs drop in and get taped down */
+.loader__cards img { position: absolute; left: var(--x); top: var(--y); width: min(28vw, 24vh, 250px); border: 2px solid var(--ink); border-radius: 6px; background: #fff; box-shadow: 4px 5px 0 rgba(26,20,16,.9); transform: rotate(var(--r)); animation: drop .9s var(--spring) both; animation-delay: calc(var(--k) * 160ms + .1s); }
+@keyframes drop { from { transform: translateY(-120vh) rotate(calc(var(--r) * -4)); } to { transform: rotate(var(--r)); } }
+html[data-lv="b"] .loader { background: var(--cream); }
+html[data-lv="b"] .loader::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 14px; background: radial-gradient(circle at 13px 0, var(--cream) 12px, transparent 12.5px) 0 0 / 26px 14px repeat-x; }
+
+/* c: striped curtain */
+html[data-lv="c"] .loader { background: var(--cream); }
+.loader__strips { display: none; }
+.loader__strips span { position: absolute; top: 0; bottom: 0; width: calc(100% / 6 + 1px); left: calc(var(--k) * 100% / 6); background: var(--c); transform-origin: top; animation: strip-in .7s cubic-bezier(.7, 0, .2, 1) both; animation-delay: calc(var(--k) * 90ms); }
+@keyframes strip-in { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+html[data-lv="c"] .loader__plate { background: var(--cream); padding: .7rem 2rem 1rem; border: 2px solid var(--ink); border-radius: 8px; box-shadow: 4px 5px 0 rgba(26,20,16,.9); animation: rise .6s var(--ease) .8s both; }
+html[data-lv="c"] .loader__name span span { animation-delay: calc(var(--i) * 80ms + 1s); }
+html[data-lv="c"] .loader__hello { animation-delay: 1.8s; }
+html[data-lv="c"] { --lt: 2.2s; }
+html[data-lv="b"] { --lt: 2.2s; }
+
+/* exits */
+.loader.is-out { pointer-events: none; }
+html[data-lv="a"] .loader.is-out { clip-path: circle(0% at 50% 50%); transition: clip-path 1s cubic-bezier(.7, 0, .2, 1); }
+html[data-lv="b"] .loader.is-out { transform: translateY(-104%); transition: transform .95s cubic-bezier(.7, 0, .2, 1); }
+html[data-lv="c"] .loader.is-out { background: transparent; }
+html[data-lv="c"] .loader.is-out .loader__plate, html[data-lv="c"] .loader.is-out .loader__track { opacity: 0; transition: opacity .25s; }
+html[data-lv="c"] .loader.is-out .loader__strips span { animation: strip-out .85s cubic-bezier(.7, 0, .2, 1) both; animation-delay: calc(var(--k) * 70ms); }
+@keyframes strip-out { to { transform: translateY(-101%); } }
+@media (max-width: 760px) { .loader__cards img { width: 34vw; } }
+@media (prefers-reduced-motion: reduce) { .loader { display: none !important; } html.is-loading { overflow: auto; } }
