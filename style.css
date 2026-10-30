@@ -534,5 +534,13 @@ html[data-lv="c"] .loader.is-out { background: transparent; }
 html[data-lv="c"] .loader.is-out .loader__plate, html[data-lv="c"] .loader.is-out .loader__track { opacity: 0; transition: opacity .25s; }
 html[data-lv="c"] .loader.is-out .loader__strips span { animation: strip-out .85s cubic-bezier(.7, 0, .2, 1) both; animation-delay: calc(var(--k) * 70ms); }
 @keyframes strip-out { to { transform: translateY(-101%); } }
-@media (max-width: 760px) { .loader__cards img { width: 34vw; } }
+@media (max-width: 760px) {
+  .loader__cards img { width: 31vw; }
+  .loader__cards img:nth-child(1) { --x: 4% !important; --y: 9% !important; }
+  .loader__cards img:nth-child(2) { --x: 63% !important; --y: 12% !important; }
+  .loader__cards img:nth-child(3) { --x: 5% !important; --y: 68% !important; }
+  .loader__cards img:nth-child(4) { --x: 62% !important; --y: 64% !important; }
+  .loader__plate { top: 45%; }
+  .loader__track { bottom: calc(6vh + env(safe-area-inset-bottom)); }
+}
 @media (prefers-reduced-motion: reduce) { .loader { display: none !important; } html.is-loading { overflow: auto; } }
