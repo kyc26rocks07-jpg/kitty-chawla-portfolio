@@ -127,12 +127,16 @@ body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-in
 @keyframes letter-in { from { opacity: 0; transform: translateY(.55em) rotate(6deg); } to { opacity: 1; transform: none; } }
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 .hero__lede { max-width: 33ch; margin: 1.4rem auto 0; font-size: clamp(1rem, 1.5vw, 1.35rem); font-weight: 500; line-height: 1.45; opacity: var(--lo, 1); animation: rise .9s var(--ease) 1s both; }
-@media (max-width: 700px) {
-  .hero { height: 170vh; }
-  .hero__stick { align-items: start; padding-top: 110px; }
-  .hero__layer--back .stk, .badge, .hero__layer--front .stk:nth-child(3) { display: none; }
-  .hero__layer--front .stk:nth-child(1) { --x: 55vw !important; --y: 74vh !important; --w: 38vw !important; }
-  .hero__layer--front .stk:nth-child(2) { --x: 6vw !important; --y: 78vh !important; --w: 34vw !important; }
+@media (max-width: 760px) {
+  .hero { height: 125vh; }
+  .hero__stick { padding: 84px 16px 40px; }
+  .badge, .hero__layer--front .stk:nth-child(3) { display: none; }
+  .hero__layer--back .stk:nth-child(1) { --x: 5vw !important; --y: 12vh !important; --w: 30vw !important; }
+  .hero__layer--back .stk:nth-child(2) { --x: 64vw !important; --y: 11vh !important; --w: 30vw !important; }
+  .hero__layer--front .stk:nth-child(1) { --x: 58vw !important; --y: 70vh !important; --w: 34vw !important; }
+  .hero__layer--front .stk:nth-child(2) { --x: 7vw !important; --y: 72vh !important; --w: 32vw !important; }
+  .hero__first { font-size: 25vw; }
+  .hero__last { font-size: 18vw; }
 }
 
 /* TICKER */
@@ -414,6 +418,52 @@ svg [class*="a-"] { transform-box: fill-box; transform-origin: center; }
 
 @keyframes marquee { to { transform: translateX(-50%); } }
 
+/* PHONES: lighter, tighter, no dead space */
+@media (max-width: 760px) {
+  body::after { display: none; }
+  .intro { padding: 70px var(--gutter) 40px; }
+  .intro__text { font-size: 2.3rem; }
+  /* HomeKrafted becomes a native swipe strip instead of a pinned scroll */
+  .pan { height: auto !important; }
+  .pan__stick { position: relative; height: auto; padding: 80px 0 56px; gap: 1.6rem; justify-content: flex-start; }
+  .pan__track { width: 100%; overflow-x: auto; transform: none !important; scroll-snap-type: x proximity; padding: 14px var(--gutter) 22px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .pan__track::-webkit-scrollbar { display: none; }
+  .card { scroll-snap-align: center; }
+  .card.sq { height: 58vw; max-height: 300px; }
+  .card.ph { height: 100vw; max-height: 480px; }
+  .cent { padding: 72px var(--gutter) 56px; }
+  .cent__fan { min-height: 420px; }
+  .cent__fan .ph { width: 38vw; }
+  .essence { padding: 72px var(--gutter); }
+  .essence__line { margin-bottom: 32px; }
+  .safe { padding: 72px var(--gutter) 56px; }
+  .safe__pile { height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+  .drag { position: relative; left: auto; top: auto; width: 100% !important; }
+  .drag:nth-child(1), .drag:nth-child(2) { grid-column: 1 / -1; }
+  .drag.ph { grid-column: 1 / -1; width: 56% !important; justify-self: center; }
+  .range { padding: 72px var(--gutter) 56px; }
+  .range__title { margin-bottom: 28px; }
+  .corner { padding: 76px var(--gutter) 60px; }
+  .creds { padding: 72px var(--gutter) 56px; }
+  .creds__grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .cert { padding: 8px 8px 12px; }
+  .cert h3 { font-size: 1rem; }
+  .writing { padding: 90px var(--gutter) 70px; }
+  .writing__head { margin-bottom: 28px; }
+  .shelf { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .wcard__art { aspect-ratio: 1 / .85; }
+  .wcard__kind { margin: 10px 12px 4px; font-size: .56rem; }
+  .wcard__title { margin: 0 12px 12px; font-size: 1.02rem; }
+  .wcard__dek { display: none; }
+  .wcard > button { box-shadow: 3px 4px 0 rgba(26,20,16,.9); }
+  .close { padding: 80px var(--gutter) 32px; }
+  .close__foot { margin-top: 56px; }
+  .scallop::before { top: -9px; height: 10px; background-size: 18px 10px; background-image: radial-gradient(circle at 9px 0, transparent 8px, var(--bg) 8.5px); }
+  /* fade the paper in instead of repainting a huge circle clip while scrolling */
+  .paper { clip-path: none; opacity: var(--po, 0); }
+  .ticker { transform: none; margin: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; }
@@ -421,6 +471,6 @@ svg [class*="a-"] { transform-box: fill-box; transform-origin: center; }
   .rv, .wipe, .reader__body p, .reader__body h3, .reader__body blockquote, .reader__body .tweet, .reader__photo, .wd > span { opacity: 1; transform: none; clip-path: none; transition: none; }
   .hero { height: auto; }
   .hero__stick { position: relative; height: auto; min-height: 100svh; }
-  .paper { clip-path: none; }
+  .paper { clip-path: none; opacity: 1; }
   .reader { transition: none; }
 }

@@ -5,6 +5,7 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const hasIO = 'IntersectionObserver' in window;
+  const phone = matchMedia('(max-width: 760px)');
 
   /* ---------- small setup ---------- */
   $$('.hero__first span, .hero__last span').forEach((s, i) => s.style.setProperty('--i', i % 6));
@@ -91,7 +92,10 @@
     const sy = scrollY;
     const top = el => el.getBoundingClientRect().top + sy;
     G.vw = innerWidth; G.vh = innerHeight;
-    pans.forEach(p => { p.dist = Math.max(0, p.track.scrollWidth - G.vw); p.sec.style.height = (p.dist + G.vh * 1.15) + 'px'; });
+    pans.forEach(p => {
+      if (phone.matches) { p.dist = 0; p.sec.style.height = ''; p.track.style.transform = ''; return; }
+      p.dist = Math.max(0, p.track.scrollWidth - G.vw); p.sec.style.height = (p.dist + G.vh * 1.15) + 'px';
+    });
     const r = heroSec.getBoundingClientRect(); G.hero = { top: r.top + sy, h: r.height };
     pans.forEach(p => { const b = p.sec.getBoundingClientRect(); p.top = b.top + sy; p.h = b.height; });
     fans.forEach(f => { const b = f.sec.getBoundingClientRect(); f.top = b.top + sy; f.h = b.height; });
@@ -105,6 +109,7 @@
   let mt = 0;
   const remeasure = () => { cancelAnimationFrame(mt); mt = requestAnimationFrame(() => { measure(); request(); }); };
   addEventListener('resize', remeasure);
+  if (phone.addEventListener) phone.addEventListener('change', remeasure);
   addEventListener('load', remeasure);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
   if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(document.body);
@@ -181,6 +186,7 @@
       ticker.style.setProperty('--sk', clamp(vel * .03, -2.5, 2.5).toFixed(2) + 'deg');
 
       for (const p of pans) {
+        if (phone.matches) break;
         const rel = y - p.top;
         if (rel < -h || rel > p.h) continue;
         const prog = clamp(rel / (p.h - h));
@@ -200,11 +206,12 @@
       }
       if (essFig) { const t = G.ess.top - y; if (t > -h && t < h * 1.2) essFig.style.setProperty('--ey', ((t / h - .4) * 14).toFixed(1) + '%'); }
       for (const d of doodled) {
-        if (!d.vis) continue;
+        if (!d.vis || phone.matches) continue;
         const base = d.top + d.h / 2 - y - h / 2;
         for (const it of d.items) it.style.setProperty('--py', (base * -it.dataset.sp * 2).toFixed(1) + 'px');
       }
-      if (pp > 0 && pp <= 1.0001) paper.style.setProperty('--pr', (pp * 170).toFixed(1) + '%');
+      if (phone.matches) paper.style.setProperty('--po', pp.toFixed(2));
+      else if (pp > 0 && pp <= 1.0001) paper.style.setProperty('--pr', (pp * 170).toFixed(1) + '%');
       else if (pp <= 0) paper.style.setProperty('--pr', '0%');
     } else {
       for (const f of fans) for (const it of f.items) {
