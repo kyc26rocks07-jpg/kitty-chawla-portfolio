@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = matchMedia('(pointer: fine)').matches;
   const $ = (s, r = document) => r.querySelector(s);
@@ -108,7 +108,8 @@
   };
   let mt = 0;
   const remeasure = () => { cancelAnimationFrame(mt); mt = requestAnimationFrame(() => { measure(); request(); }); };
-  addEventListener('resize', remeasure);
+  let lastW = innerWidth;
+  addEventListener('resize', () => { if (phone.matches && innerWidth === lastW) return; lastW = innerWidth; remeasure(); });
   if (phone.addEventListener) phone.addEventListener('change', remeasure);
   addEventListener('load', remeasure);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
