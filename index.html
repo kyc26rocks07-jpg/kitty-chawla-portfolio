@@ -21,7 +21,7 @@
   try {
     var q = new URLSearchParams(location.search).get('lv');
     if (matchMedia('(prefers-reduced-motion: reduce)').matches || location.hash.indexOf('#read-') === 0) return;
-    var all = ['a', 'b', 'c', 'd'], last = null;
+    var all = ['a', 'b', 'c'], last = null;
     try { last = localStorage.getItem('kc-lv'); } catch (e) {}
     var pool = all.filter(function (x) { return x !== last; });
     var v = all.indexOf(q) > -1 ? q : pool[Math.floor(Math.random() * pool.length)];
@@ -44,14 +44,12 @@
     <span style="--k:5;--x:50%;--y:50%;--s:24vmax;--c:#FFF3DA"></span>
   </div>
   <div class="loader__cards">
-    <img style="--k:0;--x:2%;--y:10%;--r:-8deg" src="assets/img/d-yoga.webp" width="820" height="1026" alt="">
-    <img style="--k:1;--x:76%;--y:6%;--r:6deg" src="assets/img/d-adsecure.webp" width="820" height="820" alt="">
-    <img style="--k:2;--x:3%;--y:60%;--r:5deg" src="assets/img/d-homekrafted2.webp" width="820" height="820" alt="">
-    <img style="--k:3;--x:75%;--y:58%;--r:-6deg" src="assets/img/d-cyber.webp" width="820" height="820" alt="">
+    <img style="--k:0;--x:2%;--y:10%;--r:-8deg" src="assets/img/d-yoga.webp" alt="">
+    <img style="--k:1;--x:76%;--y:6%;--r:6deg" src="assets/img/d-adsecure.webp" alt="">
+    <img style="--k:2;--x:3%;--y:60%;--r:5deg" src="assets/img/d-homekrafted2.webp" alt="">
+    <img style="--k:3;--x:75%;--y:58%;--r:-6deg" src="assets/img/d-cyber.webp" alt="">
   </div>
   <div class="loader__strips"><span style="--k:0;--c:#FFC21F"></span><span style="--k:1;--c:#FF5436"></span><span style="--k:2;--c:#2E5E3E"></span><span style="--k:3;--c:#A9D6FF"></span><span style="--k:4;--c:#FFB3C7"></span><span style="--k:5;--c:#34190D"></span></div>
-  <div class="loader__halves"><i></i><i></i></div>
-  <div class="loader__row"><span class="loader__rmark"><svg class="kcmark loader__mark2" viewBox="20 10 132 82" aria-hidden="true" focusable="false"><defs><clipPath id="gap-ld"><polygon points="0,-10 163.4,-3.5 104,50 163.4,103.5 0,110"/></clipPath></defs><path class="kk kk1" pathLength="1" d="M30 18 V82" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><path class="kk kk2" pathLength="1" d="M31 52 L56 20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path class="kk kk3" pathLength="1" d="M35 51 L58 82" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><g clip-path="url(#gap-ld)"><path class="kc" fill="currentColor" fill-rule="evenodd" d="M73 50 a31 31 0 1 0 62 0 a31 31 0 1 0 -62 0 Z M86 50 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0 Z"/></g><circle class="kd" cx="142" cy="82" r="4.5" fill="#D93A1E"/></svg></span><span class="loader__rule"></span><span class="loader__word">Kitty Chawla</span></div>
   <div class="loader__plate">
     <svg class="kcmark loader__mark" viewBox="20 10 132 82" aria-hidden="true" focusable="false"><defs><clipPath id="gap-load"><polygon points="0,-10 163.4,-3.5 104,50 163.4,103.5 0,110"/></clipPath></defs><path class="kk kk1" pathLength="1" d="M30 18 V82" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><path class="kk kk2" pathLength="1" d="M31 52 L56 20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path class="kk kk3" pathLength="1" d="M35 51 L58 82" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><g clip-path="url(#gap-load)"><path class="kc" fill="currentColor" fill-rule="evenodd" d="M73 50 a31 31 0 1 0 62 0 a31 31 0 1 0 -62 0 Z M86 50 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0 Z"/></g><circle class="kd" cx="142" cy="82" r="4.5" fill="#D93A1E"/></svg>
     <p class="loader__name"><span class="loader__first"><span style="--i:0">K</span><span style="--i:1">i</span><span style="--i:2">t</span><span style="--i:3">t</span><span style="--i:4">y</span></span><span class="loader__last"><span style="--i:5">C</span><span style="--i:6">h</span><span style="--i:7">a</span><span style="--i:8">w</span><span style="--i:9">l</span><span style="--i:10">a</span></span></p>
@@ -104,20 +102,24 @@
     <div class="doodles" data-doodles="hero" aria-hidden="true"></div>
 
     <div class="hero__layer hero__layer--back" aria-hidden="true">
-      <figure class="stk" data-depth="0.10" data-ox="-1" data-oy="-0.3" style="--x:3vw;--y:26vh;--r:-5deg;--w:clamp(110px,14.5vw,220px)"><img src="assets/img/d-yoga.webp" width="820" height="1026" alt=""><figcaption>Indian Essence</figcaption></figure>
-      <figure class="stk" data-depth="0.16" data-ox="1" data-oy="-0.4" style="--x:78vw;--y:13vh;--r:4deg;--w:clamp(110px,16vw,240px)"><img src="assets/img/d-adsecure.webp" width="820" height="820" alt=""><figcaption>Secure Funds</figcaption></figure>
+      <figure class="stk" data-depth="0.10" data-ox="-1" data-oy="-0.3" style="--x:3vw;--y:26vh;--r:-5deg;--w:clamp(110px,14.5vw,220px)"><img src="assets/img/d-yoga.webp" alt=""><figcaption>Indian Essence</figcaption></figure>
+      <figure class="stk" data-depth="0.16" data-ox="1" data-oy="-0.4" style="--x:78vw;--y:13vh;--r:4deg;--w:clamp(110px,16vw,240px)"><img src="assets/img/d-adsecure.webp" alt=""><figcaption>Secure Funds</figcaption></figure>
     </div>
 
     <div class="hero__copy">
       <p class="hero__kicker label">Graphic designer / Brand strategist / Writer</p>
-      <h1 id="hero-title" class="hero__title"><span class="sr-only">Kitty Chawla</span><span class="hero__mark" id="heromark"><svg class="kcmark " viewBox="20 10 132 82" aria-hidden="true" focusable="false"><defs><clipPath id="gap-hero"><polygon points="0,-10 163.4,-3.5 104,50 163.4,103.5 0,110"/></clipPath></defs><path class="kk kk1" pathLength="1" d="M30 18 V82" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><path class="kk kk2" pathLength="1" d="M31 52 L56 20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path class="kk kk3" pathLength="1" d="M35 51 L58 82" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><g clip-path="url(#gap-hero)"><path class="kc" fill="currentColor" fill-rule="evenodd" d="M73 50 a31 31 0 1 0 62 0 a31 31 0 1 0 -62 0 Z M86 50 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0 Z"/></g><circle class="kd" cx="142" cy="82" r="4.5" fill="#D93A1E"/></svg></span></h1>
+      <h1 id="hero-title" class="hero__title">
+        <span class="hero__first" aria-hidden="true"><span>K</span><span>i</span><span>t</span><span>t</span><span>y</span></span>
+        <span class="hero__last" aria-hidden="true"><span>C</span><span>h</span><span>a</span><span>w</span><span>l</span><span>a</span></span>
+        <span class="sr-only">Kitty Chawla</span>
+      </h1>
       <p class="hero__lede">I make brands that talk back, campaigns people forward to their mums, and words that sit quietly in the spaces between.</p>
     </div>
 
     <div class="hero__layer hero__layer--front" aria-hidden="true">
-      <figure class="stk" data-depth="0.30" data-ox="1" data-oy="0.9" style="--x:80vw;--y:67vh;--r:-4deg;--w:clamp(120px,17vw,250px)"><img src="assets/img/d-cyber.webp" width="820" height="820" alt=""><figcaption>Cyber Cell</figcaption></figure>
-      <figure class="stk" data-depth="0.38" data-ox="-1" data-oy="0.9" style="--x:3vw;--y:65vh;--r:4deg;--w:clamp(110px,15vw,230px)"><img src="assets/img/d-homekrafted2.webp" width="820" height="820" alt=""><figcaption>HomeKrafted</figcaption></figure>
-      <figure class="stk" data-depth="0.24" data-ox="1.2" data-oy="0" style="--x:88vw;--y:37vh;--r:7deg;--w:clamp(80px,9vw,140px)"><img src="assets/img/d-ics-insta.webp" width="820" height="820" alt=""><figcaption>Indian Cart Story</figcaption></figure>
+      <figure class="stk" data-depth="0.30" data-ox="1" data-oy="0.9" style="--x:80vw;--y:67vh;--r:-4deg;--w:clamp(120px,17vw,250px)"><img src="assets/img/d-cyber.webp" alt=""><figcaption>Cyber Cell</figcaption></figure>
+      <figure class="stk" data-depth="0.38" data-ox="-1" data-oy="0.9" style="--x:3vw;--y:65vh;--r:4deg;--w:clamp(110px,15vw,230px)"><img src="assets/img/d-homekrafted2.webp" alt=""><figcaption>HomeKrafted</figcaption></figure>
+      <figure class="stk" data-depth="0.24" data-ox="1.2" data-oy="0" style="--x:88vw;--y:37vh;--r:7deg;--w:clamp(80px,9vw,140px)"><img src="assets/img/d-ics-insta.webp" alt=""><figcaption>Indian Cart Story</figcaption></figure>
       <svg class="badge" data-depth="0.20" data-ox="-1" data-oy="-1" viewBox="0 0 120 120" style="--x:2.5vw;--y:11vh">
         <path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" fill="none"/>
         <circle cx="60" cy="60" r="58" fill="#FF5436"/>
@@ -151,14 +153,14 @@
       <p class="pan__sub">Ghar ka khaana, roz ka bharosa. A kitchen brand that talks in Hindi, Punjabi and a lot of film references.</p>
     </div>
     <div class="pan__track">
-      <figure class="card sq" style="--r:-1.5deg"><img loading="lazy" src="assets/img/d-homekrafted2.webp" width="820" height="820" alt="HomeKrafted daily rice bowls poster with veg and non-veg bowls and chef mascots"></figure>
-      <figure class="card ph" style="--r:1.5deg"><img loading="lazy" src="assets/img/pub-5334.webp" width="560" height="1218" alt="HomeKrafted Instagram post: Khaana khaane ka koi samay nahi hota"></figure>
-      <figure class="card ph" style="--r:-1deg"><img loading="lazy" src="assets/img/pub-5606.webp" width="560" height="1218" alt="HomeKrafted post in Punjabi: Ghar de khaane di yaad ni aayi"></figure>
-      <figure class="card sq" style="--r:2deg"><img loading="lazy" src="assets/img/d-3860.webp" width="820" height="820" alt="HomeKrafted announcement: A big update, opening soon"></figure>
-      <figure class="card ph" style="--r:-2deg"><img loading="lazy" src="assets/img/pub-5609.webp" width="560" height="1218" alt="HomeKrafted post using a classic Bollywood scene for a food pun"></figure>
-      <figure class="card ph" style="--r:1.5deg"><img loading="lazy" src="assets/img/pub-5335.webp" width="560" height="1218" alt="HomeKrafted Butter Me Up Bowls post"></figure>
-      <figure class="card ph" style="--r:-1.5deg"><img loading="lazy" src="assets/img/pub-5607.webp" width="560" height="1218" alt="HomeKrafted post: Knock knock, welcome"></figure>
-      <figure class="card ph" style="--r:1deg"><img loading="lazy" src="assets/img/pub-5902.webp" width="560" height="1218" alt="HomeKrafted Mother's Day post: She may not always say I love you, but she fills your plate"></figure>
+      <figure class="card sq" style="--r:-1.5deg"><img loading="lazy" src="assets/img/d-homekrafted2.webp" alt="HomeKrafted daily rice bowls poster with veg and non-veg bowls and chef mascots"></figure>
+      <figure class="card ph" style="--r:1.5deg"><img loading="lazy" src="assets/img/pub-5334.webp" alt="HomeKrafted Instagram post: Khaana khaane ka koi samay nahi hota"></figure>
+      <figure class="card ph" style="--r:-1deg"><img loading="lazy" src="assets/img/pub-5606.webp" alt="HomeKrafted post in Punjabi: Ghar de khaane di yaad ni aayi"></figure>
+      <figure class="card sq" style="--r:2deg"><img loading="lazy" src="assets/img/d-3860.webp" alt="HomeKrafted announcement: A big update, opening soon"></figure>
+      <figure class="card ph" style="--r:-2deg"><img loading="lazy" src="assets/img/pub-5609.webp" alt="HomeKrafted post using a classic Bollywood scene for a food pun"></figure>
+      <figure class="card ph" style="--r:1.5deg"><img loading="lazy" src="assets/img/pub-5335.webp" alt="HomeKrafted Butter Me Up Bowls post"></figure>
+      <figure class="card ph" style="--r:-1.5deg"><img loading="lazy" src="assets/img/pub-5607.webp" alt="HomeKrafted post: Knock knock, welcome"></figure>
+      <figure class="card ph" style="--r:1deg"><img loading="lazy" src="assets/img/pub-5902.webp" alt="HomeKrafted Mother's Day post: She may not always say I love you, but she fills your plate"></figure>
     </div>
   </div>
 </section>
@@ -173,9 +175,9 @@
       <p>What happens when mustard seeds start crackling? A question on every story, a taste in every answer. Curiosity does the selling.</p>
     </div>
     <div class="cent__fan">
-      <figure class="ph fanned" data-fanned="-1"><img loading="lazy" src="assets/img/pub-4572.webp" width="560" height="1218" alt="Cent Spices story: What happens when you add cumin to hot oil?"></figure>
-      <figure class="ph fanned" data-fanned="0"><img loading="lazy" src="assets/img/pub-4610.webp" width="560" height="1218" alt="Cent Spices story: What happens when mustard seeds start crackling?"></figure>
-      <figure class="ph fanned" data-fanned="1"><img loading="lazy" src="assets/img/pub-4631.webp" width="560" height="1218" alt="Cent Spices story: What happens when you chew fennel after a meal?"></figure>
+      <figure class="ph fanned" data-fanned="-1"><img loading="lazy" src="assets/img/pub-4572.webp" alt="Cent Spices story: What happens when you add cumin to hot oil?"></figure>
+      <figure class="ph fanned" data-fanned="0"><img loading="lazy" src="assets/img/pub-4610.webp" alt="Cent Spices story: What happens when mustard seeds start crackling?"></figure>
+      <figure class="ph fanned" data-fanned="1"><img loading="lazy" src="assets/img/pub-4631.webp" alt="Cent Spices story: What happens when you chew fennel after a meal?"></figure>
     </div>
   </div>
 </section>
@@ -187,9 +189,9 @@
     <p class="label">Wellness / Yoga</p>
     <h2 id="ie-title" class="essence__line"><span class="rv">Slow down.</span> <span class="rv" style="--d:.15s">The brand breathes too.</span></h2>
     <div class="essence__row">
-      <figure class="ph rv" style="--d:.1s"><img loading="lazy" src="assets/img/pub-4341.webp" width="560" height="1218" alt="Indian Essence Holi story with a woman meditating in colour clouds"></figure>
-      <figure class="tall rv" style="--d:.25s"><img loading="lazy" src="assets/img/d-yoga.webp" width="820" height="1026" alt="Indian Essence daily yoga classes poster"></figure>
-      <figure class="ph rv" style="--d:.4s"><img loading="lazy" src="assets/img/pub-5337.webp" width="560" height="1218" alt="Indian Essence post: Hormonal balance through yoga"></figure>
+      <figure class="ph rv" style="--d:.1s"><img loading="lazy" src="assets/img/pub-4341.webp" alt="Indian Essence Holi story with a woman meditating in colour clouds"></figure>
+      <figure class="tall rv" style="--d:.25s"><img loading="lazy" src="assets/img/d-yoga.webp" alt="Indian Essence daily yoga classes poster"></figure>
+      <figure class="ph rv" style="--d:.4s"><img loading="lazy" src="assets/img/pub-5337.webp" alt="Indian Essence post: Hormonal balance through yoga"></figure>
     </div>
     <p class="essence__note rv">Indian Essence. Earth tones, generous space, a typeface with a pulse.</p>
   </div>
@@ -204,9 +206,9 @@
     <p>Serious subjects, easy to read. Posts made for the Chandigarh Cyber Cell audience, built so a worried parent understands them in three seconds. <b class="hint">On a computer, drag the cards around.</b></p>
   </div>
   <div class="safe__pile" data-pile>
-    <figure class="drag" data-cursor="Drag" style="--x:2%;--y:6%;--r:-4deg;--w:min(46%,420px)"><img loading="lazy" src="assets/img/d-2023.webp" width="820" height="820" alt="How to prevent sextortion: eight safety tips with icons"></figure>
-    <figure class="drag" data-cursor="Drag" style="--x:40%;--y:0%;--r:3deg;--w:min(44%,400px)"><img loading="lazy" src="assets/img/d-cyber.webp" width="820" height="820" alt="Cyber safety poster: Don't judge a book by its cover, it can be a honey trap. Helpline 1930"></figure>
-    <figure class="drag ph" data-cursor="Drag" style="--x:68%;--y:14%;--r:-2deg;--w:min(24%,230px)"><img loading="lazy" src="assets/img/pub-5338.webp" width="560" height="1218" alt="Honey trap awareness post as seen on Instagram"></figure>
+    <figure class="drag" data-cursor="Drag" style="--x:2%;--y:6%;--r:-4deg;--w:min(46%,420px)"><img loading="lazy" src="assets/img/d-2023.webp" alt="How to prevent sextortion: eight safety tips with icons"></figure>
+    <figure class="drag" data-cursor="Drag" style="--x:40%;--y:0%;--r:3deg;--w:min(44%,400px)"><img loading="lazy" src="assets/img/d-cyber.webp" alt="Cyber safety poster: Don't judge a book by its cover, it can be a honey trap. Helpline 1930"></figure>
+    <figure class="drag ph" data-cursor="Drag" style="--x:68%;--y:14%;--r:-2deg;--w:min(24%,230px)"><img loading="lazy" src="assets/img/pub-5338.webp" alt="Honey trap awareness post as seen on Instagram"></figure>
   </div>
 </section>
 
@@ -215,9 +217,9 @@
   <div class="doodles" data-doodles="range" aria-hidden="true"></div>
   <h2 id="range-title" class="range__title">Also fluent in <span>suits.</span></h2>
   <div class="range__grid">
-    <figure class="wipe" style="--d:0s"><img loading="lazy" src="assets/img/d-adsecure.webp" width="820" height="820" alt="Secure Funds services poster: unlock financial opportunities"><figcaption class="label">Secure Funds / Finance</figcaption></figure>
-    <figure class="wipe" style="--d:.15s"><img loading="lazy" src="assets/img/d-paramedify.webp" width="820" height="688" alt="Paramedify poster: job opportunity for nurses in Germany"><figcaption class="label">Paramedify / Healthcare careers</figcaption></figure>
-    <figure class="wipe" style="--d:.3s"><img loading="lazy" src="assets/img/d-ics-insta.webp" width="820" height="820" alt="Indian Cart Story outreach schedule poster"><figcaption class="label">Indian Cart Story / Food outreach</figcaption></figure>
+    <figure class="wipe" style="--d:0s"><img loading="lazy" src="assets/img/d-adsecure.webp" alt="Secure Funds services poster: unlock financial opportunities"><figcaption class="label">Secure Funds / Finance</figcaption></figure>
+    <figure class="wipe" style="--d:.15s"><img loading="lazy" src="assets/img/d-paramedify.webp" alt="Paramedify poster: job opportunity for nurses in Germany"><figcaption class="label">Paramedify / Healthcare careers</figcaption></figure>
+    <figure class="wipe" style="--d:.3s"><img loading="lazy" src="assets/img/d-ics-insta.webp" alt="Indian Cart Story outreach schedule poster"><figcaption class="label">Indian Cart Story / Food outreach</figcaption></figure>
   </div>
   <p class="range__more">More in the <a href="https://drive.google.com/drive/folders/1gX_kSRlz-UfGL7PMfCWfHnV23PwLWhDl" target="_blank" rel="noopener">full portfolio folder</a>: carousels, decks, menus, reports and print ads.</p>
 </section>
@@ -557,7 +559,6 @@
   <h2 id="close-title" class="close__title">Got a brand that needs a voice?</h2>
   <p class="close__sub">Or a story that needs a home. Tell me about it.</p>
   <a class="btn" data-magnet data-cursor="Write" href="mailto:?subject=Hello%20Kitty%2C%20let%27s%20work%20together">Say hello</a>
-  <div class="close__marquee" aria-hidden="true"><div class="close__marqueetrack"><span>Let&rsquo;s talk</span><i></i><span>Let&rsquo;s talk</span><i></i><span>Let&rsquo;s talk</span><i></i><span>Let&rsquo;s talk</span><i></i><span>Let&rsquo;s talk</span><i></i><span>Let&rsquo;s talk</span><i></i><span>Let&rsquo;s talk</span><i></i><span>Let&rsquo;s talk</span><i></i><span>Let&rsquo;s talk</span><i></i><span>Let&rsquo;s talk</span><i></i><span>Let&rsquo;s talk</span><i></i><span>Let&rsquo;s talk</span><i></i></div></div>
   <p class="close__foot label">Kitty Chawla / Designer, brand strategist, writer</p>
 </section>
 
@@ -680,7 +681,7 @@
 
 <template id="t-voice" data-title="If They Had a Voice" data-kind="Photo story">
 <p class="byline">Photographs and words by Kitty Chawla</p>
-<figure class="reader__photo"><img loading="lazy" src="assets/img/w-2076.webp" width="700" height="1236" alt="Four black and white photographs: a rose in the rain, an empty school desk and chairs, a street dog waiting in the rain, and a car side mirror covered in raindrops, each with a line of imagined speech"></figure>
+<figure class="reader__photo"><img loading="lazy" src="assets/img/w-2076.webp" alt="Four black and white photographs: a rose in the rain, an empty school desk and chairs, a street dog waiting in the rain, and a car side mirror covered in raindrops, each with a line of imagined speech"></figure>
 <p>What would the things around us say if they could speak on a rainy day?</p>
 <p><b>The Rose:</b> "I'm the one who blooms in the rain, my life gets rejoiced with the water drops, I rejuvenate as I get nourished by the rain."</p>
 <p><b>The Desk:</b> "When it rains, I miss the gossips kids get for me, I wait for the books to lie on me, I remain vacant as I want the kids to sit on me."</p>
@@ -776,7 +777,6 @@
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
