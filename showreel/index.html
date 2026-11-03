@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kitty Chawla | Showreel</title>
+<meta name="description" content="30-second showreel: Kitty Chawla, graphic designer, brand strategist and writer.">
+<link rel="icon" type="image/svg+xml" href="../assets/logo/kc-favicon.svg">
+<style>
+  :root { --cream: #FFF3DA; --ink: #0B0908; --tomato: #FF5436; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: var(--ink); color: var(--cream); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; padding: calc(20px + env(safe-area-inset-top)) 16px 32px; }
+  header { max-width: 1100px; margin: 0 auto 18px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  h1 { margin: 0; font-size: 20px; font-weight: 600; }
+  a { color: var(--cream); }
+  .tabs { display: flex; gap: 8px; }
+  .tabs button { font: inherit; font-size: 14px; color: var(--cream); background: transparent; border: 1.5px solid rgba(255,243,218,.4); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .tabs button[aria-pressed="true"] { background: var(--tomato); border-color: var(--tomato); color: var(--ink); }
+  main { max-width: 1100px; margin: 0 auto; display: grid; place-items: center; }
+  video { display: block; background: #000; border-radius: 12px; max-width: 100%; }
+  video.l { width: 100%; aspect-ratio: 16 / 9; }
+  video.p { height: min(82vh, 900px); aspect-ratio: 9 / 16; }
+  video[hidden] { display: none; }
+  p.back { max-width: 1100px; margin: 18px auto 0; font-size: 14px; opacity: .75; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Kitty Chawla Showreel</h1>
+  <div class="tabs" role="group" aria-label="Format">
+    <button id="bl" aria-pressed="false">Landscape</button>
+    <button id="bp" aria-pressed="false">Portrait</button>
+  </div>
+</header>
+<main>
+  <video id="vl" class="l" src="showreel-landscape.mp4" poster="poster-landscape.jpg" controls playsinline preload="metadata"></video>
+  <video id="vp" class="p" src="showreel-portrait.mp4" poster="poster-portrait.jpg" controls playsinline preload="metadata"></video>
+</main>
+<p class="back"><a href="../">View the portfolio</a></p>
+<script>
+  // show portrait on tall screens (phones), landscape elsewhere; buttons switch
+  const vl = document.getElementById('vl'), vp = document.getElementById('vp'), bl = document.getElementById('bl'), bp = document.getElementById('bp');
+  const pick = p => { vl.hidden = p; vp.hidden = !p; bl.setAttribute('aria-pressed', !p); bp.setAttribute('aria-pressed', p); (p ? vl : vp).pause(); };
+  bl.onclick = () => pick(false); bp.onclick = () => pick(true);
+  pick(innerHeight > innerWidth);
+</script>
+</body>
+</html>
