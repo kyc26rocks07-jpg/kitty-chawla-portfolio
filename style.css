@@ -563,3 +563,49 @@ html[data-lv="c"] .loader__mark .kc { animation-delay: 1.5s; } html[data-lv="c"]
 @keyframes kring { from { opacity: 0; scale: .4; rotate: -90deg; } to { opacity: 1; scale: 1; rotate: 0deg; } }
 @keyframes kdot { from { opacity: 0; scale: 0; } to { opacity: 1; scale: 1; } }
 @media (prefers-reduced-motion: reduce) { .loader__mark .kk { stroke-dashoffset: 0; } }
+/* HERO LOGO: the mark is the centrepiece and flies into the menu as you scroll */
+.hero__copy { z-index: 4; }
+.hero__title { margin: 0; line-height: 0; }
+.hero__mark { display: block; width: clamp(240px, 40vw, 600px); margin: .4rem auto 0; color: var(--ink); opacity: var(--ho, 1); transform: translate3d(var(--hx, 0px), var(--hy, 0px), 0) scale(var(--hs, 1)); transform-origin: center; will-change: transform; }
+.hero__mark .kcmark { display: block; width: 100%; height: auto; overflow: visible; }
+.hero__mark .kk { stroke-dasharray: 1; stroke-dashoffset: 1; animation: kdraw .85s cubic-bezier(.6, 0, .3, 1) both; }
+.hero__mark .kk1 { animation-delay: .1s; } .hero__mark .kk2 { animation-delay: .5s; } .hero__mark .kk3 { animation-delay: .75s; }
+.hero__mark .kc { transform-box: fill-box; transform-origin: center; animation: kring .9s var(--spring) .95s both; }
+.hero__mark .kd { animation: kdot .6s var(--spring) 1.6s both; }
+.hero__kicker, .hero__lede { opacity: var(--lo, 1); }
+.nav__mark { opacity: var(--nm, 1); }
+@media (max-width: 760px) { .hero__mark { width: min(64vw, 34svh); } }
+@media (prefers-reduced-motion: reduce) { .hero__mark .kk { stroke-dashoffset: 0; } }
+
+/* LOADER d: a thin line draws across, the logo draws in, then the screen opens like a shutter */
+.loader__halves, .loader__row { display: none; }
+html[data-lv="d"] .loader { background: transparent; }
+html[data-lv="d"] .loader__halves { display: block; position: absolute; inset: 0; }
+html[data-lv="d"] .loader__halves i { position: absolute; left: 0; right: 0; height: 50.2%; background: var(--ink); }
+html[data-lv="d"] .loader__halves i:first-child { top: 0; }
+html[data-lv="d"] .loader__halves i:last-child { bottom: 0; }
+html[data-lv="d"] .loader__plate, html[data-lv="d"] .loader__track { display: none; }
+html[data-lv="d"] .loader__row { display: flex; position: absolute; z-index: 3; left: 50%; top: 50%; translate: -50% -50%; width: min(88vw, 980px); align-items: center; gap: clamp(14px, 3vw, 34px); color: var(--cream); }
+.loader__rmark { flex: none; width: clamp(64px, 11vw, 110px); }
+.loader__row .kcmark { display: block; width: 100%; height: auto; overflow: visible; }
+.loader__row .kk { stroke-dasharray: 1; stroke-dashoffset: 1; animation: kdraw .6s cubic-bezier(.6, 0, .3, 1) both; }
+.loader__row .kk1 { animation-delay: .3s; } .loader__row .kk2 { animation-delay: .65s; } .loader__row .kk3 { animation-delay: .85s; }
+.loader__row .kc { transform-box: fill-box; transform-origin: center; animation: kring .7s var(--spring) 1s both; }
+.loader__row .kd { animation: kdot .5s var(--spring) 1.5s both; }
+.loader__rule { flex: 1; height: 2px; background: var(--cream); transform-origin: left; animation: fill 1.5s cubic-bezier(.7, 0, .2, 1) .4s both; }
+.loader__word { flex: none; font-family: var(--font-body); font-weight: 600; font-size: clamp(.7rem, 1.7vw, 1rem); letter-spacing: .24em; text-transform: uppercase; animation: rise .6s var(--ease) 1.4s both; }
+html[data-lv="d"] .loader.is-out .loader__halves i:first-child { transform: translateY(-101%); transition: transform .95s cubic-bezier(.7, 0, .2, 1); }
+html[data-lv="d"] .loader.is-out .loader__halves i:last-child { transform: translateY(101%); transition: transform .95s cubic-bezier(.7, 0, .2, 1); }
+html[data-lv="d"] .loader.is-out .loader__row { opacity: 0; transition: opacity .3s; }
+@media (max-width: 560px) { .loader__word { display: none; } }
+
+/* CLOSE: "Let's talk" band */
+.close__marquee { overflow: hidden; margin: clamp(60px, 9vw, 120px) calc(var(--gutter) * -1) 0; border-block: 2px solid var(--ink); background: var(--ink); color: var(--marigold); }
+.close__marqueetrack { display: flex; align-items: center; gap: clamp(20px, 3vw, 40px); width: max-content; padding: .5rem 0; font-family: var(--font-display); font-size: clamp(2.2rem, 7vw, 5.5rem); line-height: 1.1; animation: marquee 38s linear infinite; }
+.close__marqueetrack i { width: .32em; height: .32em; border-radius: 50%; background: var(--tomato); flex: none; }
+
+/* smooth inertia scrolling (Lenis) */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }

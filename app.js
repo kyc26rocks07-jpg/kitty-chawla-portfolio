@@ -6,6 +6,7 @@
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const hasIO = 'IntersectionObserver' in window;
   const phone = matchMedia('(max-width: 760px)');
+  let lenis = null;
 
   /* ---------- small setup ---------- */
   $$('.hero__first span, .hero__last span').forEach((s, i) => s.style.setProperty('--i', i % 6));
@@ -75,7 +76,7 @@
   } else wcards.forEach(c => c.classList.add('live'));
 
   /* ---------- elements the scroll loop drives ---------- */
-  const heroSec = $('#hero'), heroCopy = $('.hero__copy');
+  const heroSec = $('#hero'), heroMark = $('#heromark'), navMark = $('.nav__mark');
   const depthEls = $$('[data-depth]', heroSec);
   const pans = $$('[data-pan]').map(sec => ({ sec, track: $('.pan__track', sec), dist: 0, top: 0, h: 0 }));
   const fans = $$('[data-fan]').map(sec => ({ sec, items: $$('.fanned', sec), top: 0, h: 0 }));
@@ -85,6 +86,7 @@
   const nav = $('#nav'), links = $$('#navlinks a'), blob = $('#navblob'), progress = $('#navprogress');
   const navSecs = $$('[data-nav-bg]').map(el => ({ el, top: 0, bottom: 0 }));
   const anchors = ['work', 'corner', 'credentials', 'writing', 'hello'].map(id => ({ id, el: document.getElementById(id), top: 0 }));
+  const HM = { x: 0, y: 0, w: 1 }, NM = { x: 0, y: 0, w: 1 };
   const G = { hero: { top: 0, h: 0 }, paper: { top: 0 }, ess: { top: 0 }, doc: 1, vw: innerWidth, vh: innerHeight };
 
   /* geometry is measured once (and when the layout changes), never inside the scroll frame */
@@ -105,6 +107,12 @@
     navSecs.forEach(s => { const b = s.el.getBoundingClientRect(); s.top = b.top + sy; s.bottom = b.bottom + sy; });
     anchors.forEach(a => { if (a.el) a.top = top(a.el); });
     G.doc = document.documentElement.scrollHeight;
+    // where the hero logo sits (untransformed, hero pinned at the top) and where the menu logo sits
+    let ex = 0, ey = 0, el = heroMark;
+    while (el && el !== heroSec.firstElementChild) { ex += el.offsetLeft; ey += el.offsetTop; el = el.offsetParent; }
+    HM.x = ex + heroMark.offsetWidth / 2; HM.y = ey + heroMark.offsetHeight / 2; HM.w = heroMark.offsetWidth;
+    const nr = navMark.getBoundingClientRect(), shift = nav.classList.contains('is-hidden') ? nav.offsetHeight * 1.01 : 0;
+    NM.x = nr.left + nr.width / 2; NM.y = nr.top + nr.height / 2 + shift; NM.w = navMark.offsetWidth;
   };
   let mt = 0;
   const remeasure = () => { cancelAnimationFrame(mt); mt = requestAnimationFrame(() => { measure(); request(); }); };
@@ -128,7 +136,7 @@
       Promise.race([Promise.all([loaded, fonts]), cap]).then(() => {
         setTimeout(() => {
           loader.classList.add('is-out');
-          setTimeout(() => { loader.remove(); root.classList.remove('is-loading'); remeasure(); }, 1250);
+          setTimeout(() => { loader.remove(); root.classList.remove('is-loading'); lenis && lenis.start(); remeasure(); }, 1250);
         }, Math.max(0, MIN - (performance.now() - t0)));
       });
     }
@@ -162,7 +170,7 @@
     if (isTop !== topState) { topState = isTop; nav.classList.toggle('is-top', isTop); }
     const dy = y - lastY;
     if (Math.abs(dy) > 5) {
-      if (dy > 0 && y > G.vh * .6 && !navLock) nav.classList.add('is-hidden');
+      if (dy > 0 && y > Math.max(G.vh * .6, G.hero.h - G.vh * .3) && !navLock) nav.classList.add('is-hidden');
       else if (dy < 0) nav.classList.remove('is-hidden');
       lastY = y;
     }
@@ -180,7 +188,8 @@
   links.forEach(l => l.addEventListener('click', () => { navLock = true; nav.classList.remove('is-hidden'); setTimeout(() => navLock = false, 900); }));
 
   /* ---------- the frame loop: no layout reads in here ---------- */
-  let ticking = false, vel = 0, prevY = scrollY;
+  let ticking = false, vel = 0, prevY = scrollY, markSwapped = null;
+  if (!reduce) nav.style.setProperty('--nm', 0);
   const frame = () => {
     ticking = false;
     const y = scrollY, h = G.vh, w = G.vw;
@@ -198,9 +207,12 @@
           el.style.setProperty('--py', (-hp * h * d * .35 - my * d * 120 + oy * out * h * .7).toFixed(1) + 'px');
           el.style.setProperty('--sr', (ox * out * 28).toFixed(1) + 'deg');
         }
-        heroCopy.style.setProperty('--cy', (-hp * h * .1).toFixed(1) + 'px');
-        heroCopy.style.setProperty('--cs', (1 - hp * .16).toFixed(3));
-        heroCopy.style.setProperty('--lo', clamp(1 - hp * 2.4).toFixed(2));
+        const mp = clamp(hp / .5), me = 1 - Math.pow(1 - mp, 3), swapped = mp >= 1;
+        heroMark.style.setProperty('--hx', ((NM.x - HM.x) * me).toFixed(1) + 'px');
+        heroMark.style.setProperty('--hy', ((NM.y - HM.y) * me).toFixed(1) + 'px');
+        heroMark.style.setProperty('--hs', (1 + (NM.w / HM.w - 1) * me).toFixed(3));
+        if (swapped !== markSwapped) { markSwapped = swapped; heroMark.style.setProperty('--ho', swapped ? 0 : 1); nav.style.setProperty('--nm', swapped ? 1 : 0); }
+        const lo = clamp(1 - hp * 3).toFixed(2); heroSec.style.setProperty('--lo', lo);
       }
       ticker.style.setProperty('--sk', clamp(vel * .03, -2.5, 2.5).toFixed(2) + 'deg');
 
@@ -244,6 +256,21 @@
   const request = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
   addEventListener('scroll', request, { passive: true });
   measure(); request();
+
+  /* smooth inertia scrolling (desktop pointers only; phones keep native momentum) */
+  if (window.Lenis && !reduce && fine) {
+    lenis = new Lenis({ lerp: .1, wheelMultiplier: .95 });
+    if (document.documentElement.classList.contains('is-loading')) lenis.stop();
+    const raf = t => { lenis.raf(t); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+    lenis.on('scroll', request);
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a[href^="#"]'); if (!a || e.defaultPrevented) return;
+      const id = a.getAttribute('href'), tgt = id.length > 1 ? document.querySelector(id) : null;
+      if (id === '#top') { e.preventDefault(); lenis.scrollTo(0); }
+      else if (tgt) { e.preventDefault(); lenis.scrollTo(tgt, { offset: -60 }); }
+    });
+  }
 
   /* ---------- cursor: a paper sparkle that leans into the motion ---------- */
   const cur = $('#cursor');
@@ -386,7 +413,7 @@
     makeDoodles($('.doodles', rArt), 6);
     reader.hidden = false;
     rScroll.scrollTop = 0;
-    document.body.classList.add('is-reading');
+    document.body.classList.add('is-reading'); lenis && lenis.stop();
     requestAnimationFrame(() => requestAnimationFrame(() => { reader.classList.add('is-open'); rClose.focus({ preventScroll: true }); }));
     history.replaceState(null, '', '#read-' + id);
     rio && rio.disconnect();
@@ -401,7 +428,7 @@
   const closeReader = () => {
     if (reader.hidden) return;
     reader.classList.remove('is-open');
-    document.body.classList.remove('is-reading');
+    document.body.classList.remove('is-reading'); lenis && lenis.start();
     history.replaceState(null, '', location.pathname + location.search);
     const done = () => { reader.hidden = true; rBody.innerHTML = ''; rArt.innerHTML = ''; };
     reduce ? done() : setTimeout(done, 720);
@@ -416,7 +443,7 @@
     if (e.key === 'Escape') closeReader();
     if (e.key === 'Tab') { e.preventDefault(); (document.activeElement === rClose ? rScroll : rClose).focus(); }
   });
-  rScroll.tabIndex = 0;
+  rScroll.tabIndex = 0; rScroll.setAttribute('data-lenis-prevent', '');
   $$('[data-open]').forEach(b => b.addEventListener('click', () => openReader(b.dataset.open, b)));
   if (location.hash.startsWith('#read-')) addEventListener('load', () => openReader(location.hash.slice(6)));
 })();
