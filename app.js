@@ -75,7 +75,7 @@
   } else wcards.forEach(c => c.classList.add('live'));
 
   /* ---------- elements the scroll loop drives ---------- */
-  const heroSec = $('#hero'), heroCopy = $('.hero__copy');
+  const heroSec = $('#hero'), heroCopy = $('.hero__copy'), heroFade = [$('.hero__kicker'), $('.hero__lede')];
   const depthEls = $$('[data-depth]', heroSec);
   const pans = $$('[data-pan]').map(sec => ({ sec, track: $('.pan__track', sec), dist: 0, top: 0, h: 0 }));
   const fans = $$('[data-fan]').map(sec => ({ sec, items: $$('.fanned', sec), top: 0, h: 0 }));
@@ -127,7 +127,7 @@
       const cap = new Promise(res => setTimeout(res, 5000));
       Promise.race([Promise.all([loaded, fonts]), cap]).then(() => {
         setTimeout(() => {
-          loader.classList.add('is-out');
+          loader.classList.add('is-out'); root.classList.add('is-revealing');
           setTimeout(() => { loader.remove(); root.classList.remove('is-loading'); remeasure(); }, 1250);
         }, Math.max(0, MIN - (performance.now() - t0)));
       });
@@ -200,7 +200,7 @@
         }
         heroCopy.style.setProperty('--cy', (-hp * h * .1).toFixed(1) + 'px');
         heroCopy.style.setProperty('--cs', (1 - hp * .16).toFixed(3));
-        heroCopy.style.setProperty('--lo', clamp(1 - hp * 2.4).toFixed(2));
+        const lo = clamp(1 - hp * 2.4).toFixed(2); for (const f of heroFade) f.style.opacity = lo;
       }
       ticker.style.setProperty('--sk', clamp(vel * .03, -2.5, 2.5).toFixed(2) + 'deg');
 
