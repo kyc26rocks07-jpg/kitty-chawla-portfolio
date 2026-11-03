@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 10 132 82" width="528" height="328" role="img" aria-label="Kitty Chawla KC mark, light version for dark backgrounds">
+<defs><clipPath id="gap"><polygon points="0,-10 163.4,-3.5 104,50 163.4,103.5 0,110"/></clipPath></defs>
+<g color="#F4F3EE">
+<path d="M30 18 V82" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+<path d="M31 52 L56 20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+<path d="M35 51 L58 82" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+<g clip-path="url(#gap)"><path fill="currentColor" fill-rule="evenodd" d="M73 50 a31 31 0 1 0 62 0 a31 31 0 1 0 -62 0 Z M86 50 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0 Z"/></g>
+<circle cx="142" cy="82" r="4.5" fill="#D93A1E"/>
+</g>
+</svg>

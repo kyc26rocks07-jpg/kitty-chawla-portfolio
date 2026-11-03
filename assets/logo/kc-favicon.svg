@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Kitty Chawla favicon">
+<rect width="64" height="64" rx="14" fill="#12151A"/>
+<svg x="7" y="18" width="50" height="31" viewBox="20 10 132 82">
+<defs><clipPath id="gap"><polygon points="0,-10 163.4,-3.5 104,50 163.4,103.5 0,110"/></clipPath></defs>
+<g color="#F4F3EE">
+<path d="M30 18 V82" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
+<path d="M31 52 L56 20" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+<path d="M35 51 L58 82" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+<g clip-path="url(#gap)"><path fill="currentColor" fill-rule="evenodd" d="M73 50 a31 31 0 1 0 62 0 a31 31 0 1 0 -62 0 Z M88 50 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 Z"/></g>
+<circle cx="142" cy="82" r="6" fill="#D93A1E"/>
+</g>
+</svg>
+</svg>

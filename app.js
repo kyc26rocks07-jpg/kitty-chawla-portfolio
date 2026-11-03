@@ -121,7 +121,7 @@
     const root = document.documentElement;
     if (!root.classList.contains('is-loading')) loader.remove();
     else {
-      const MIN = 2300, t0 = performance.now();
+      const MIN = 2700, t0 = performance.now();
       const loaded = new Promise(res => document.readyState === 'complete' ? res() : addEventListener('load', res, { once: true }));
       const fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
       const cap = new Promise(res => setTimeout(res, 5000));
