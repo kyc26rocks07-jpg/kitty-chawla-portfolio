@@ -11,11 +11,21 @@
   $$('.hero__first span, .hero__last span').forEach((s, i) => s.style.setProperty('--i', i % 6));
   $$('img').forEach(i => i.decoding = 'async');
 
-  $$('[data-split]').forEach(el => {
-    const words = el.textContent.trim().split(/\s+/);
-    el.setAttribute('aria-label', el.textContent.trim());
-    el.innerHTML = words.map((w, i) => `<span class="wd" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(' ');
+  let wordIx = 0;
+  const splitWords = node => [...node.childNodes].forEach(n => {
+    if (n.nodeType === 3) {
+      const frag = document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach(p => {
+        if (!p) return;
+        if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(' ')); return; }
+        const w = document.createElement('span'), i = document.createElement('span');
+        w.className = 'wd'; w.setAttribute('aria-hidden', 'true'); i.style.setProperty('--i', wordIx++); i.textContent = p; w.appendChild(i); frag.appendChild(w);
+      });
+      n.replaceWith(frag);
+    } else if (n.nodeType === 1 && n.tagName !== 'BR') splitWords(n);
   });
+  $$('[data-split]').forEach(el => { wordIx = 0; el.setAttribute('aria-label', el.textContent.trim().replace(/\s+/g, ' ')); splitWords(el); });
+
 
   /* ---------- doodles: drifting background shapes ---------- */
   const seed = s => { let h = 2166136261; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return () => (h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0) / 4294967296; };
@@ -115,20 +125,27 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
   if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(document.body);
 
-  /* ---------- loader: waits for the page, plays at least one full beat, then exits ---------- */
+  /* ---------- loader: waits for the page, plays a full beat, then leaves (the planet dives in first) ---------- */
   const loader = $('#loader');
   if (loader) {
     const root = document.documentElement;
     if (!root.classList.contains('is-loading')) loader.remove();
     else {
-      const MIN = 2700, t0 = performance.now();
+      const world = root.getAttribute('data-lv') === 'd' && !!window.KCWorld;
+      const MIN = world ? 2800 : 2700, t0 = performance.now();
       const loaded = new Promise(res => document.readyState === 'complete' ? res() : addEventListener('load', res, { once: true }));
       const fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
       const cap = new Promise(res => setTimeout(res, 5000));
+      let left = false;
+      const leave = () => {
+        if (left) return; left = true;
+        loader.classList.add('is-out'); root.classList.add('is-revealing');
+        setTimeout(() => { window.KCWorld && window.KCWorld.destroy(); loader.remove(); root.classList.remove('is-loading'); remeasure(); }, 1250);
+      };
       Promise.race([Promise.all([loaded, fonts]), cap]).then(() => {
         setTimeout(() => {
-          loader.classList.add('is-out'); root.classList.add('is-revealing');
-          setTimeout(() => { loader.remove(); root.classList.remove('is-loading'); remeasure(); }, 1250);
+          if (world) { loader.classList.add('is-diving'); window.KCWorld.dive(leave); setTimeout(leave, 3600); }
+          else leave();
         }, Math.max(0, MIN - (performance.now() - t0)));
       });
     }
@@ -180,10 +197,13 @@
   links.forEach(l => l.addEventListener('click', () => { navLock = true; nav.classList.remove('is-hidden'); setTimeout(() => navLock = false, 900); }));
 
   /* ---------- the frame loop: no layout reads in here ---------- */
-  let ticking = false, vel = 0, prevY = scrollY;
-  const frame = () => {
+  let ticking = false, vel = 0, prevY = scrollY, sm = scrollY, lastTs = 0;
+  const frame = ts => {
     ticking = false;
-    const y = scrollY, h = G.vh, w = G.vw;
+    const yReal = scrollY, h = G.vh, w = G.vw, now = ts || performance.now();
+    const dt = clamp((now - lastTs) / 1000, .001, .05); lastTs = now;
+    sm += (yReal - sm) * (1 - Math.exp(-dt * 7)); if (Math.abs(yReal - sm) < .2) sm = yReal;
+    const y = reduce ? yReal : sm;
     vel += ((y - prevY) - vel) * .2; prevY = y;
 
     const pp = clamp((h * .95 - (G.paper.top - y)) / (h * .9));
@@ -238,11 +258,13 @@
         it.style.setProperty('--fx', (i * 140) + 'px'); it.style.setProperty('--fy', (Math.abs(i) * 24) + 'px'); it.style.setProperty('--fr', (i * 9) + 'deg');
       }
     }
-    updateNav(y, reduce ? 1 : pp);
-    if (!reduce && (Math.abs(tx - mx) > .001 || Math.abs(ty - my) > .001 || Math.abs(vel) > .05)) request();
+    updateNav(yReal, reduce ? 1 : pp);
+    if (!reduce && (Math.abs(tx - mx) > .001 || Math.abs(ty - my) > .001 || Math.abs(vel) > .05 || Math.abs(yReal - sm) > .2)) request();
   };
   const request = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
   addEventListener('scroll', request, { passive: true });
+  addEventListener('load', () => { sm = scrollY; });
+  addEventListener('pageshow', () => { sm = scrollY; });
   measure(); request();
 
   /* ---------- cursor: a paper sparkle that leans into the motion ---------- */
@@ -291,7 +313,7 @@
     addEventListener('pointerup', () => cur.classList.remove('is-down'));
   }
 
-  /* ---------- tilt + magnet ---------- */
+  /* ---------- tilt ---------- */
   if (fine && !reduce) {
     $$('.card, .wcard > button').forEach(el => {
       let box = null, raf = 0, ex = 0, ey = 0;
@@ -308,15 +330,33 @@
       });
       el.addEventListener('pointerleave', () => { box = null; el.style.setProperty('--tx', '0deg'); el.style.setProperty('--ty', '0deg'); });
     });
-    $$('[data-magnet]').forEach(el => {
-      el.addEventListener('pointermove', e => {
-        const r = el.getBoundingClientRect();
-        el.style.setProperty('--mx', ((e.clientX - (r.left + r.width / 2)) * .3).toFixed(1) + 'px');
-        el.style.setProperty('--my', ((e.clientY - (r.top + r.height / 2)) * .3).toFixed(1) + 'px');
-      });
-      el.addEventListener('pointerleave', () => { el.style.setProperty('--mx', '0px'); el.style.setProperty('--my', '0px'); });
-    });
   }
+
+  /* ---------- contact: copy buttons ---------- */
+  const copyMsg = $('.copymsg');
+  let msgT = 0;
+  $$('.copybtn').forEach(b => {
+    const label = $('span', b).textContent;
+    b.addEventListener('click', async () => {
+      if (b.dataset.busy) return;
+      b.dataset.busy = '1';
+      const text = b.dataset.copy, what = b.dataset.what;
+      let ok = false;
+      try { await navigator.clipboard.writeText(text); ok = true; } catch (err) {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+          document.body.appendChild(ta); ta.select(); ok = document.execCommand('copy'); ta.remove();
+        } catch (err2) { ok = false; }
+      }
+      copyMsg.textContent = ok ? what + ' copied: ' + text : 'Could not copy automatically. ' + what + ': ' + text;
+      if (ok) { b.classList.add('is-done'); $('span', b).textContent = 'Copied'; }
+      clearTimeout(msgT); msgT = setTimeout(() => { copyMsg.textContent = ''; }, 4500);
+      setTimeout(() => { b.classList.remove('is-done'); $('span', b).textContent = label; delete b.dataset.busy; }, 1800);
+    });
+  });
+  // phones have a mail app; desktops without one get Gmail in the browser
+  if (matchMedia('(pointer: coarse)').matches) $$('[data-mail]').forEach(a => { a.href = 'mailto:' + a.dataset.mail + '?subject=Hello%20Kitty'; a.removeAttribute('target'); a.removeAttribute('rel'); });
 
   /* ---------- the pile: drag (mouse only) ---------- */
   let topZ = 10;
@@ -363,12 +403,23 @@
   pick(tabs[0]);
 
   /* ---------- reading room ---------- */
+  const shelf = $('#shelf');
+  let swapT = 0;
   $$('.chip').forEach(c => c.addEventListener('click', () => {
+    if (c.classList.contains('is-on')) return;
     $$('.chip').forEach(x => { x.classList.toggle('is-on', x === c); x.setAttribute('aria-pressed', x === c); });
     const f = c.dataset.filter;
-    wcards.forEach(card => card.classList.toggle('is-out', f !== 'all' && card.dataset.cat !== f));
-    remeasure();
+    clearTimeout(swapT);
+    shelf.classList.add('is-swapping');
+    swapT = setTimeout(() => {
+      wcards.forEach(card => card.classList.toggle('is-out', f !== 'all' && card.dataset.cat !== f));
+      $$('.wcard:not(.is-out)').forEach((card, i) => card.style.setProperty('--k', i));
+      shelf.classList.remove('is-swapping'); shelf.classList.add('is-entering');
+      remeasure();
+      swapT = setTimeout(() => shelf.classList.remove('is-entering'), 1200);
+    }, reduce ? 0 : 280);
   }));
+
 
   const reader = $('#reader'), rScroll = $('#readerscroll'), rBody = $('#readerbody'), rArt = $('#readerart'), rClose = $('#readerclose'), rProg = $('#readerprog');
   let opener = null, rio = null;

@@ -14,14 +14,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Lora:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=de6f7dd719">
+<link rel="stylesheet" href="style.css?v=ebf48b9db9">
 <script>
-/* loader: pick one of three entrances per visit (never the same twice in a row). ?lv=a|b|c forces one. */
+/* loader: pick one of four entrances per visit (never the same twice in a row). ?lv=a|b|c|d forces one. */
 (function () {
   try {
     var q = new URLSearchParams(location.search).get('lv');
     if (matchMedia('(prefers-reduced-motion: reduce)').matches || location.hash.indexOf('#read-') === 0) return;
-    var all = ['a', 'b', 'c'], last = null;
+    var all = ['a', 'b', 'c', 'd'], last = null, gl = false;
+    try { var cv = document.createElement('canvas'); gl = !!(cv.getContext('webgl') || cv.getContext('experimental-webgl')); } catch (e) {}
+    if (!gl) all = ['a', 'b', 'c'];
     try { last = localStorage.getItem('kc-lv'); } catch (e) {}
     var pool = all.filter(function (x) { return x !== last; });
     var v = all.indexOf(q) > -1 ? q : pool[Math.floor(Math.random() * pool.length)];
@@ -50,6 +52,10 @@
     <img style="--k:3;--x:75%;--y:58%;--r:-6deg" src="assets/img/d-cyber.webp" alt="">
   </div>
   <div class="loader__strips"><span style="--k:0;--c:#FFC21F"></span><span style="--k:1;--c:#FF5436"></span><span style="--k:2;--c:#2E5E3E"></span><span style="--k:3;--c:#A9D6FF"></span><span style="--k:4;--c:#FFB3C7"></span><span style="--k:5;--c:#34190D"></span></div>
+  <div class="loader__world" aria-hidden="true">
+    <canvas id="world"></canvas>
+    <div class="loader__title"><p class="loader__tname">Kitty Chawla</p><p class="loader__trole">Graphic designer &middot; Brand strategist &middot; Writer</p></div>
+  </div>
   <div class="loader__plate">
     <svg class="kcmark loader__mark" viewBox="20 10 132 82" aria-hidden="true" focusable="false"><defs><clipPath id="gap-load"><polygon points="0,-10 163.4,-3.5 104,50 163.4,103.5 0,110"/></clipPath></defs><path class="kk kk1" pathLength="1" d="M30 18 V82" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><path class="kk kk2" pathLength="1" d="M31 52 L56 20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path class="kk kk3" pathLength="1" d="M35 51 L58 82" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><g clip-path="url(#gap-load)"><path class="kc" fill="currentColor" fill-rule="evenodd" d="M73 50 a31 31 0 1 0 62 0 a31 31 0 1 0 -62 0 Z M86 50 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0 Z"/></g><circle class="kd" cx="142" cy="82" r="4.5" fill="#D93A1E"/></svg>
     <p class="loader__name"><span class="loader__first"><span style="--i:0">K</span><span style="--i:1">i</span><span style="--i:2">t</span><span style="--i:3">t</span><span style="--i:4">y</span></span><span class="loader__last"><span style="--i:5">C</span><span style="--i:6">h</span><span style="--i:7">a</span><span style="--i:8">w</span><span style="--i:9">l</span><span style="--i:10">a</span></span></p>
@@ -171,7 +177,7 @@
   <div class="cent__inner">
     <div class="cent__copy">
       <p class="label label--light">Spices / Instagram stories</p>
-      <h2 id="cent-title" class="display display--light">Cent <span>Spices</span></h2>
+      <h2 id="cent-title" data-split class="display display--light">Cent <span class="hl">Spices</span></h2>
       <p>What happens when mustard seeds start crackling? A question on every story, a taste in every answer. Curiosity does the selling.</p>
     </div>
     <div class="cent__fan">
@@ -202,7 +208,7 @@
   <div class="doodles" data-doodles="safe" aria-hidden="true"></div>
   <div class="safe__head">
     <p class="label">Public awareness / Cyber safety</p>
-    <h2 id="safe-title" class="display">Design that keeps you <span>safe</span></h2>
+    <h2 id="safe-title" data-split class="display">Design that keeps you <span class="hl">safe</span></h2>
     <p>Serious subjects, easy to read. Posts made for the Chandigarh Cyber Cell audience, built so a worried parent understands them in three seconds. <b class="hint">On a computer, drag the cards around.</b></p>
   </div>
   <div class="safe__pile" data-pile>
@@ -215,7 +221,7 @@
 <!-- 5. RANGE -->
 <section class="range scallop" data-nav-bg="#1A1410" data-nav-ink="#FFF3DA" aria-labelledby="range-title" style="--bg:var(--ink)">
   <div class="doodles" data-doodles="range" aria-hidden="true"></div>
-  <h2 id="range-title" class="range__title">Also fluent in <span>suits.</span></h2>
+  <h2 id="range-title" data-split class="range__title">Also fluent in <span class="hl">suits.</span></h2>
   <div class="range__grid">
     <figure class="wipe" style="--d:0s"><img loading="lazy" src="assets/img/d-adsecure.webp" alt="Secure Funds services poster: unlock financial opportunities"><figcaption class="label">Secure Funds / Finance</figcaption></figure>
     <figure class="wipe" style="--d:.15s"><img loading="lazy" src="assets/img/d-paramedify.webp" alt="Paramedify poster: job opportunity for nurses in Germany"><figcaption class="label">Paramedify / Healthcare careers</figcaption></figure>
@@ -230,7 +236,7 @@
   <div class="corner__inner">
     <header class="corner__head">
       <p class="label label--light">The strategy corner</p>
-      <h2 id="corner-title" class="display display--light">Brands &amp; the ideas I pinned up for them</h2>
+      <h2 id="corner-title" data-split class="display display--light">Brands &amp; the ideas I pinned up for them</h2>
       <p class="corner__dek">Pick a brand. These are the real ideas, lines and plans from my working files.</p>
     </header>
 
@@ -352,7 +358,7 @@
   <div class="doodles" data-doodles="creds" aria-hidden="true"></div>
   <header class="creds__head">
     <p class="label">Credentials</p>
-    <h2 id="creds-title" class="display">Certifications &amp; training</h2>
+    <h2 id="creds-title" data-split class="display">Certifications &amp; training</h2>
   </header>
   <ul class="creds__grid">
     <li class="cert"><a class="cert__link" href="assets/certs/dunster-pgd-digital-marketing.webp" target="_blank" rel="noopener"><div class="cert__img"><img src="assets/certs/dunster-pgd-digital-marketing.webp" width="1500" height="1166" alt="Post Graduate Diploma in Digital Marketing awarded to Kitty Chawla by Dunster Business School, Switzerland, August 2026" loading="lazy" decoding="async"></div><h3>Post Graduate Diploma in Digital Marketing</h3><p class="label">Dunster Business School, Switzerland / 2026</p><p class="cert__more">View full size</p></a></li>
@@ -368,7 +374,7 @@
   <div class="writing__inner">
     <header class="writing__head">
       <p class="label label--tom">The reading room</p>
-      <h2 id="w-title" class="writing__title">Words, set down slowly.</h2>
+      <h2 id="w-title" data-split class="writing__title">Words, set down slowly.</h2>
       <p class="writing__dek">Essays, poems, a short film script, thinking out loud and a few tweets. Pick one and it opens as a page of its own.</p>
     </header>
 
@@ -554,19 +560,30 @@
 <!-- CLOSE -->
 <section class="close scallop" id="hello" data-nav-bg="#FFC21F" data-nav-ink="#1A1410" aria-labelledby="close-title" style="--bg:var(--marigold)">
   <div class="doodles" data-doodles="close" aria-hidden="true"></div>
-  <h2 id="close-title" class="close__title">Got a brand that needs a voice?</h2>
+  <h2 id="close-title" data-split class="close__title">Got a brand that needs a voice?</h2>
   <p class="close__sub">Or a story that needs a home. Tell me about it.</p>
-  <div class="close__actions">
-    <a class="btn" data-magnet data-cursor="Write" href="mailto:thekcworkspace@gmail.com?subject=Hello%20Kitty%2C%20let%27s%20work%20together">Say hello</a>
-    <a class="btn btn--ghost" href="https://wa.me/916283523460?text=Hi%20Kitty%2C%20I%20found%20your%20portfolio." target="_blank" rel="noopener">WhatsApp</a>
-    <a class="btn btn--ghost" href="tel:+916283523460">Call</a>
-    <a class="btn btn--ghost" href="https://www.linkedin.com/in/kitty-chawla-495753282" target="_blank" rel="noopener">LinkedIn</a>
+  <div class="contact" role="group" aria-label="Ways to reach me">
+    <a class="tile tile--lead" href="https://wa.me/916283523460?text=Hi%20Kitty%2C%20I%20found%20your%20portfolio." target="_blank" rel="noopener">
+      <span class="tile__icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H11l-4.2 3.6c-.5.4-1.3.1-1.3-.6V16A2.5 2.5 0 0 1 4 13.5z"/><path d="M8.5 9.5h.01M12 9.5h.01M15.5 9.5h.01"/></svg></span>
+      <span class="tile__text"><span class="tile__title">WhatsApp</span><span class="tile__sub">+91 62835 23460</span></span>
+      <span class="tile__go"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="tile" href="tel:+916283523460">
+      <span class="tile__icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3.5l2.2.2c.5.1.9.5 1 1l.5 2.7c.1.5-.1 1-.5 1.3L8.4 9.9a12 12 0 0 0 5.7 5.7l1.2-1.4c.3-.4.8-.6 1.3-.5l2.7.5c.5.1.9.5 1 1l.2 2.2c.1 1-.7 1.9-1.7 1.9C10.6 19.3 4.7 13.4 4.7 5.2c0-1 .9-1.8 1.9-1.7z"/></svg></span>
+      <span class="tile__text"><span class="tile__title">Call</span><span class="tile__sub">+91 62835 23460</span></span>
+      <span class="tile__go"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="tile" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=thekcworkspace@gmail.com&amp;su=Hello%20Kitty" target="_blank" rel="noopener" data-mail="thekcworkspace@gmail.com">
+      <span class="tile__icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7.5l8 6 8-6"/></svg></span>
+      <span class="tile__text"><span class="tile__title">Email</span><span class="tile__sub">thekcworkspace@gmail.com</span></span>
+      <span class="tile__go"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
   </div>
-  <dl class="close__details">
-    <div><dt class="label">Phone and WhatsApp</dt><dd><a href="tel:+916283523460">+91 62835 23460</a></dd></div>
-    <div><dt class="label">Email</dt><dd><a href="mailto:thekcworkspace@gmail.com">thekcworkspace@gmail.com</a></dd></div>
-    <div><dt class="label">LinkedIn</dt><dd><a href="https://www.linkedin.com/in/kitty-chawla-495753282" target="_blank" rel="noopener">linkedin.com/in/kitty-chawla-495753282</a></dd></div>
-  </dl>
+  <div class="copyrow">
+    <button type="button" class="copybtn" data-copy="+91 62835 23460" data-what="Number"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="i-copy"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M15 9V6.5A2.5 2.5 0 0 0 12.5 4h-6A2.5 2.5 0 0 0 4 6.5v6A2.5 2.5 0 0 0 6.5 15H9"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="i-check"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Copy number</span></button>
+    <button type="button" class="copybtn" data-copy="thekcworkspace@gmail.com" data-what="Email"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="i-copy"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M15 9V6.5A2.5 2.5 0 0 0 12.5 4h-6A2.5 2.5 0 0 0 4 6.5v6A2.5 2.5 0 0 0 6.5 15H9"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="i-check"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Copy email</span></button>
+  </div>
+  <p class="copymsg" role="status" aria-live="polite"></p>
   <p class="close__foot label">Kitty Chawla / Designer, brand strategist, writer</p>
 </section>
 
@@ -785,6 +802,7 @@
 
 </div>
 
-<script src="app.js?v=de6f7dd719"></script>
+<script src="world.js?v=ebf48b9db9"></script>
+<script src="app.js?v=ebf48b9db9"></script>
 </body>
 </html>
